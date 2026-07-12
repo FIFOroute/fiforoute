@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Условия использования — FIFO Route</title>
+<meta name="description" content="Условия использования услуг FIFO Route: что входит в пакеты, зона ответственности сторон и правила оплаты.">
+<link rel="canonical" href="https://fiforoute.work/terms.html">
+<link rel="icon" type="image/svg+xml" href="assets/FR.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0b1622; --navy:#101e2e; --navy-soft:#16283c;
+    --slate:#5c7187; --slate-light:#9fb0c2; --ice:#eef3f8;
+    --orange:#ff7a2e; --orange-deep:#e2611a; --green:#2bd9a3;
+    --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Manrope',sans-serif;background:var(--navy-deep);color:var(--ice);line-height:1.7;-webkit-font-smoothing:antialiased;}
+  h1,h2{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.01em;line-height:1.2;}
+  a{color:var(--orange);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:4px;}
+  svg{display:block;}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
+  header{background:rgba(11,22,34,0.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:16px 0;position:sticky;top:0;z-index:10;}
+  .nav{display:flex;align-items:center;justify-content:space-between;max-width:820px;margin:0 auto;padding:0 24px;}
+  .logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:19px;display:flex;align-items:center;gap:10px;color:var(--ice);}
+  .logo:hover{text-decoration:none;}
+  .logo span.accent{color:var(--orange);}
+  .logo .mark{width:32px;height:32px;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(255,122,46,0.35));}
+  .back{font-size:13.5px;color:var(--slate-light);font-weight:600;}
+  .back:hover{color:var(--orange);text-decoration:none;}
+  main{padding:64px 0 100px;}
+  .doc-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:16px;}
+  .doc-eyebrow::before{content:"";width:28px;height:2px;background:linear-gradient(90deg,var(--orange),transparent);display:inline-block;}
+  h1{font-size:36px;margin-bottom:10px;}
+  .updated{color:var(--slate-light);font-size:13.5px;margin-bottom:14px;}
+  .doc-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px;}
+  .doc-nav a{font-size:12.5px;font-weight:700;color:var(--slate-light);border:1px solid var(--line);border-radius:20px;padding:7px 14px;transition:color .15s,border-color .15s;}
+  .doc-nav a:hover{color:var(--orange);border-color:var(--orange);text-decoration:none;}
+  .doc-nav a.current{color:var(--orange);border-color:rgba(255,122,46,0.45);background:rgba(255,122,46,0.08);}
+  h2{font-size:20px;margin:40px 0 14px;color:var(--ice);}
+  p{color:var(--slate-light);font-size:15px;margin-bottom:14px;}
+  ul{color:var(--slate-light);font-size:15px;margin:0 0 14px 22px;}
+  li{margin-bottom:8px;}
+  strong{color:var(--ice);}
+  table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14px;}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--slate-light);}
+  th{color:var(--ice);font-family:'Oswald',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:0.04em;text-transform:uppercase;}
+  .card{background:var(--navy-soft);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin:28px 0;}
+  .card p:last-child{margin-bottom:0;}
+  .card.good{border-color:rgba(43,217,163,0.35);background:rgba(43,217,163,0.06);}
+  .card.warn,.warn{border-color:rgba(255,122,46,0.35);background:rgba(255,122,46,0.06);}
+  footer{background:var(--navy);border-top:1px solid var(--line);padding:36px 0;}
+  .footer-inner{max-width:820px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;}
+  .footer-social{display:flex;gap:10px;}
+  .soc{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s,transform .15s;}
+  .soc svg{width:17px;height:17px;fill:var(--slate-light);transition:fill .15s;}
+  .soc:hover{border-color:var(--orange);background:rgba(255,122,46,0.08);transform:translateY(-2px);text-decoration:none;}
+  .soc:hover svg{fill:var(--orange);}
+  footer p{color:var(--slate-light);font-size:13px;margin:0;}
+  footer p a{color:var(--slate-light);}
+  footer p a:hover{color:var(--orange);}
+  @media(max-width:600px){h1{font-size:28px;}main{padding:44px 0 70px;}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="fr-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7a2e"/><stop offset="100%" stop-color="#e2611a"/>
+    </linearGradient>
+  </defs>
+  <symbol id="i-fr" viewBox="0 0 512 512">
+    <rect width="512" height="512" rx="105" fill="url(#fr-gradient)"/>
+    <text x="50%" y="55%" font-family="'Oswald','Arial Black',sans-serif" font-size="210" font-weight="800" fill="#0b1622" dominant-baseline="middle" text-anchor="middle" letter-spacing="-5">FR</text>
+  </symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.88 5.88 0 0 0-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.8.72 1.47 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm7.85-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></symbol>
+</svg>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo" aria-label="FIFO Route — на главную">
+      <svg class="mark" aria-hidden="true"><use href="#i-fr"/></svg>
+      FIFO<span class="accent">Route</span>
+    </a>
+    <a href="index.html" class="back">← Вернуться на сайт</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="doc-eyebrow">Документы</span>
+    <h1>Условия использования</h1>
+    <p class="updated">Действует с 1 июля 2026 года</p>
+    <nav class="doc-nav" aria-label="Документы">
+      <a href="privacy-policy.html">Конфиденциальность</a>
+      <a href="terms.html" class="current">Условия использования</a>
+      <a href="refund-policy.html">Политика возврата</a>
+    </nav>
+
+    <p>Эти условия регулируют использование сайта fiforoute.work и оказание услуг компанией FIFO Route (далее — «мы», «Компания», «Исполнитель») клиенту (далее — «вы», «Клиент»). Оплачивая любой из пакетов, вы подтверждаете, что прочитали и приняли эти условия.</p>
+
+    <h2>1. Что мы делаем — и что нет</h2>
+    <p>Мы оказываем консультационные услуги: подготовку резюме под международный ATS-стандарт, разбор визовых маршрутов, сопровождение подготовки документов и подготовку к собеседованиям.</p>
+    <div class="card warn">
+      <p><strong>Мы не гарантируем трудоустройство, выдачу визы или одобрение работодателем.</strong> Решение о найме принимает работодатель, решение о визе — миграционная служба соответствующей страны. Это находится вне нашего контроля. Мы гарантируем качественную подготовку документов и резюме на максимально возможном уровне — это то, что реально зависит от нас.</p>
+    </div>
+
+    <h2>2. Пакеты услуг и оплата</h2>
+    <table>
+      <tr><th>Пакет</th><th>Цена</th></tr>
+      <tr><td>Старт</td><td>$169</td></tr>
+      <tr><td>Карьерный билдер</td><td>$329</td></tr>
+      <tr><td>Акселератор</td><td>$599</td></tr>
+      <tr><td>VIP под ключ</td><td>$1299</td></tr>
+    </table>
+    <p>Все цены указаны в долларах США (USD). Оплата проходит через защищённую платёжную систему (Stripe) либо согласовывается индивидуально с менеджером в Telegram (карта, банковский перевод или криптовалюта). Работа над вашим заказом начинается после подтверждения оплаты.</p>
+    <p>Полный перечень того, что входит в каждый пакет, указан в разделе «Пакеты услуг» на главной странице сайта на момент оформления заказа.</p>
+
+    <h2>3. Обязанности клиента</h2>
+    <ul>
+      <li>Предоставлять точную и актуальную информацию об опыте, образовании и квалификации.</li>
+      <li>Отвечать на запросы менеджера в разумные сроки — задержки с вашей стороны могут повлиять на сроки визовых процессов, которые мы не контролируем.</li>
+      <li>Самостоятельно нести ответственность за подлинность предоставленных документов.</li>
+    </ul>
+
+    <h2>4. Правки и раунды доработки</h2>
+    <p>Количество раундов правок зависит от выбранного пакета (от 1 раунда в пакете «Старт» до безлимитных правок резюме в пакетах «Акселератор» и «VIP под ключ»). Правки принимаются в течение 30 дней с момента получения черновика; после этого срока дополнительные правки могут быть платными.</p>
+
+    <h2>5. Ограничение ответственности</h2>
+    <p>Компания не несёт ответственности за:</p>
+    <ul>
+      <li>Решения работодателей о найме или отказе в найме.</li>
+      <li>Решения миграционных и визовых органов.</li>
+      <li>Изменения визового законодательства стран назначения после оказания услуги.</li>
+      <li>Косвенные убытки, упущенную выгоду или моральный вред.</li>
+    </ul>
+    <p>Максимальная ответственность Компании перед клиентом по любому требованию ограничена суммой, фактически уплаченной клиентом за соответствующий пакет.</p>
+
+    <h2>6. Интеллектуальная собственность</h2>
+    <p>Итоговое резюме, сопроводительное письмо и другие подготовленные для вас документы становятся вашей собственностью после полной оплаты. Материалы сайта (тексты, дизайн, логотип) остаются собственностью Компании.</p>
+
+    <h2>7. Возврат средств</h2>
+    <p>Условия возврата описаны в отдельном документе — <a href="refund-policy.html">Политике возврата</a>.</p>
+
+    <h2>8. Изменение условий</h2>
+    <p>Мы можем обновлять эти условия. Действующая версия всегда доступна на этой странице с указанием даты вступления в силу.</p>
+
+    <h2>9. Контакты</h2>
+    <p>По вопросам, связанным с этими условиями: <a href="mailto:hello@fiforoute.work">hello@fiforoute.work</a> или <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener">@fiforoute_support</a> в Telegram.</p>
+
+    <div class="card">
+      <p>Этот документ носит информационный характер и подготовлен как основа для юридического документа. Перед публикацией на боевом сайте рекомендуем проверить его у юриста с учётом стран, в которых вы фактически оказываете услуги.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-social">
+      <a class="soc" href="https://t.me/+P4JdFIIBZ5AzNWQ0" target="_blank" rel="noopener" aria-label="Telegram-канал"><svg><use href="#i-tg"/></svg></a>
+      <a class="soc" href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener" aria-label="Поддержка в Telegram"><svg><use href="#i-tg"/></svg></a>
+      <a class="soc" href="https://www.instagram.com/fiforoute.work/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+      <a class="soc" href="https://www.facebook.com/profile.php?id=61591759503106" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+    </div>
+    <p>© 2026 FIFO Route · <a href="index.html">На главную</a> · <a href="privacy-policy.html">Политика конфиденциальности</a> · <a href="refund-policy.html">Политика возврата</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

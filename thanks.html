@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оплата получена — FIFO Route</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="assets/FR.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0b1622; --navy:#101e2e; --navy-soft:#16283c;
+    --slate-light:#9fb0c2; --ice:#eef3f8;
+    --orange:#ff7a2e; --orange-deep:#e2611a; --green:#2bd9a3;
+    --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Manrope',sans-serif;background:var(--navy-deep);color:var(--ice);
+    line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;
+    display:flex;flex-direction:column;
+    background-image:radial-gradient(ellipse at 70% -10%, rgba(255,122,46,0.14), transparent 55%);
+  }
+  a{color:var(--orange);text-decoration:none;}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px;}
+  .card{
+    max-width:640px;width:100%;background:linear-gradient(160deg,var(--navy-soft),var(--navy));
+    border:1px solid var(--line-strong);border-radius:20px;padding:48px 44px;
+    box-shadow:0 40px 90px -40px rgba(0,0,0,0.7);
+  }
+  .check{
+    width:72px;height:72px;border-radius:50%;background:rgba(43,217,163,0.14);
+    border:2px solid var(--green);display:flex;align-items:center;justify-content:center;
+    font-size:34px;color:var(--green);margin-bottom:26px;
+  }
+  h1{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:30px;margin-bottom:12px;line-height:1.15;}
+  .sub{color:var(--slate-light);font-size:15.5px;margin-bottom:34px;}
+  .step{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line);}
+  .step .n{
+    font-family:'Oswald',sans-serif;font-weight:700;color:var(--orange);
+    background:rgba(255,122,46,0.12);width:34px;height:34px;border-radius:9px;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;
+  }
+  .step h3{font-size:15.5px;font-weight:700;margin-bottom:4px;}
+  .step p{color:var(--slate-light);font-size:14px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;
+    margin-top:28px;padding:17px 30px;border-radius:10px;
+    background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#10131a;
+    font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;
+    box-shadow:0 10px 30px -8px rgba(255,122,46,0.5);transition:transform .15s;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .alt{margin-top:18px;text-align:center;font-size:13px;color:var(--slate-light);}
+  footer{text-align:center;padding:26px;font-size:12.5px;color:var(--slate-light);border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <div class="check">✓</div>
+    <h1>Оплата получена — спасибо!</h1>
+    <p class="sub">Подтверждение уже отправлено на вашу почту. Остался один шаг, чтобы мы могли начать работу над вашим заказом.</p>
+
+    <div class="step">
+      <div class="n">1</div>
+      <div>
+        <h3>Заполните анкету — 5–7 минут</h3>
+        <p>Опыт, образование, гражданство, желаемая страна. Именно из этих данных мы соберём ваше резюме и подберём визовый маршрут.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="n">2</div>
+      <div>
+        <h3>Мы изучаем вашу анкету</h3>
+        <p>Менеджер свяжется с вами в течение рабочего дня (Пн–Сб, 9:00–20:00 МСК), уточнит детали и подтвердит план работы.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="n">3</div>
+      <div>
+        <h3>Черновик резюме — за 2 рабочих дня</h3>
+        <p>Отсчёт начинается с момента, когда мы получили заполненную анкету.</p>
+      </div>
+    </div>
+
+    <a class="btn" href="https://forms.gle/XjYDJGCbkHFGMMtA7" target="_blank" rel="noopener">Заполнить анкету →</a>
+
+    <p class="alt">Вопросы? Напишите в <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener">поддержку в Telegram</a> или на <a href="mailto:hello@fiforoute.work">hello@fiforoute.work</a></p>
+  </div>
+</main>
+<footer>© 2026 FIFO Route · <a href="index.html">На главную</a></footer>
+</body>
+</html>
