@@ -508,6 +508,18 @@
   .testi-role{font-size:12.5px;color:var(--slate-light);}
 
   /* ===== FAQ ===== */
+  /* Blog / Полезные материалы */
+  .blog-section{background:var(--navy-deep);}
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:44px;}
+  .blog-card{display:flex;flex-direction:column;background:linear-gradient(160deg,var(--navy-soft),var(--navy));border:1px solid var(--line);border-radius:16px;padding:26px 24px;transition:transform .18s, border-color .18s;text-decoration:none;}
+  .blog-card:hover{transform:translateY(-4px);border-color:rgba(255,122,46,0.4);text-decoration:none;}
+  .blog-card .tag{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.1em;font-size:11.5px;color:var(--orange);font-weight:600;margin-bottom:14px;}
+  .blog-card h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:20px;line-height:1.2;color:var(--ice);margin-bottom:12px;}
+  .blog-card p{font-size:14.5px;color:var(--slate-light);line-height:1.6;margin-bottom:18px;flex:1;}
+  .blog-card .read{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.05em;font-size:13px;color:var(--orange);font-weight:600;margin-top:auto;}
+  .blog-all{text-align:center;margin-top:36px;}
+  .blog-all a{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.06em;font-size:14px;color:var(--ice);font-weight:600;border:1px solid var(--line-strong);border-radius:9px;padding:13px 28px;display:inline-block;transition:border-color .15s;}
+  .blog-all a:hover{border-color:var(--orange);text-decoration:none;}
   .faq{background:var(--navy);}
   .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
   .faq-item{background:var(--navy-soft);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .2s;}
@@ -679,6 +691,7 @@
       <a href="#visa">Виза</a>
       <a href="#services">Пакеты</a>
       <a href="#community">Сообщество</a>
+      <a href="#blog">Блог</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Контакты</a>
     </nav>
@@ -1075,6 +1088,34 @@
           <p>«Взял VIP-пакет — и не зря. Куратор сам напоминал о сроках, проверял каждый документ. Я просто следовал плану.»</p>
           <div class="testi-person"><div class="testi-avatar">МП</div><div><div class="testi-name">Максим П.</div><div class="testi-role">Сварщик, Уфа</div></div></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog / Полезные материалы -->
+  <section class="blog-section" id="blog">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <div class="eyebrow">Полезные материалы</div>
+        <h2>Разбираемся в FIFO и offshore без воды</h2>
+        <p class="section-sub">Честные гайды о том, как устроена работа за границей, сколько платят и что нужно, чтобы туда попасть.</p>
+      </div>
+      <div class="blog-grid">
+        <a href="blog/chto-takoe-fifo-rabota.html" class="blog-card reveal">
+          <div class="tag">Разбор для новичков</div>
+          <h3>Что такое FIFO-работа и сколько на ней зарабатывают</h3>
+          <p>Как устроен вахтовый график, какие деньги реальны и что нужно, чтобы попасть на FIFO. Честно и по делу.</p>
+          <span class="read">Читать →</span>
+        </a>
+        <a href="blog/rabota-offshore-vetryaki.html" class="blog-card reveal">
+          <div class="tag">Отрасли и вакансии</div>
+          <h3>Работа на офшорных ветряках: спрос, зарплаты, сертификаты</h3>
+          <p>Растущая ниша с нехваткой людей: кого ищут на морские ветропарки, при чём тут сертификат GWO и как войти.</p>
+          <span class="read">Читать →</span>
+        </a>
+      </div>
+      <div class="blog-all">
+        <a href="blog/index.html">Все материалы</a>
       </div>
     </div>
   </section>

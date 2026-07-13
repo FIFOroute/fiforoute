@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Блог FIFO Route — гайды о работе FIFO и offshore</title>
+<meta name="description" content="Честные материалы о работе FIFO и offshore для русскоязычных специалистов: графики, зарплаты, визы, сертификаты и первые шаги к трудоустройству за границей.">
+<link rel="canonical" href="https://fiforoute.work/blog/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Блог FIFO Route — гайды о работе FIFO и offshore">
+<meta property="og:description" content="Честные гайды о работе за границей для русскоязычных специалистов: без обещаний, только по делу.">
+<meta property="og:url" content="https://fiforoute.work/blog/">
+<meta property="og:image" content="https://fiforoute.work/assets/Logo_FR.png">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="FIFO Route">
+
+<link rel="icon" type="image/svg+xml" href="../assets/FR.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Блог FIFO Route",
+  "description": "Честные гайды о работе FIFO и offshore для русскоязычных специалистов.",
+  "url": "https://fiforoute.work/blog/",
+  "publisher": {"@type": "Organization", "name": "FIFO Route", "logo": {"@type":"ImageObject","url":"https://fiforoute.work/assets/Logo_FR.png"}}
+}
+</script>
+
+<style>
+  :root{
+    --navy-deep:#0b1622; --navy:#101e2e; --navy-soft:#16283c;
+    --slate:#5c7187; --slate-light:#9fb0c2; --ice:#eef3f8;
+    --orange:#ff7a2e; --orange-deep:#e2611a; --green:#2bd9a3;
+    --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Manrope',sans-serif;background:var(--navy-deep);color:var(--ice);
+    line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;
+    background-image:radial-gradient(ellipse at 80% -5%, rgba(255,122,46,0.10), transparent 55%);
+  }
+  a{color:var(--orange);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  header{position:sticky;top:0;z-index:50;background:rgba(11,22,34,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav{max-width:1000px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Oswald',sans-serif;font-weight:700;font-size:19px;letter-spacing:0.02em;color:var(--ice);text-transform:uppercase;}
+  .logo:hover{text-decoration:none;}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));display:flex;align-items:center;justify-content:center;font-size:15px;color:#10131a;font-weight:700;}
+  .nav .back{font-family:'Manrope';font-size:14px;color:var(--slate-light);font-weight:600;}
+
+  .hero{max-width:1000px;margin:0 auto;padding:64px 24px 20px;text-align:center;}
+  .eyebrow{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:13px;color:var(--orange);font-weight:600;margin-bottom:16px;}
+  .hero h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(30px,6vw,48px);line-height:1.12;text-transform:uppercase;margin-bottom:16px;}
+  .hero p{font-size:18px;color:var(--slate-light);max-width:600px;margin:0 auto;}
+
+  main{max-width:1000px;margin:0 auto;padding:36px 24px 60px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;}
+  .card{display:flex;flex-direction:column;background:linear-gradient(160deg,var(--navy-soft),var(--navy));border:1px solid var(--line);border-radius:16px;padding:28px 26px;transition:transform .18s, border-color .18s;text-decoration:none;}
+  .card:hover{transform:translateY(-4px);border-color:rgba(255,122,46,0.4);text-decoration:none;}
+  .card .tag{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.1em;font-size:11.5px;color:var(--orange);font-weight:600;margin-bottom:14px;}
+  .card h2{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:21px;line-height:1.2;color:var(--ice);margin-bottom:12px;}
+  .card p{font-size:14.5px;color:var(--slate-light);line-height:1.6;margin-bottom:18px;flex:1;}
+  .card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
+  .card .date{font-size:12.5px;color:var(--slate);}
+  .card .read{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.05em;font-size:13px;color:var(--orange);font-weight:600;}
+
+  .cta-strip{max-width:1000px;margin:20px auto 0;padding:0 24px;}
+  .cta-inner{background:linear-gradient(150deg,rgba(255,122,46,0.14),rgba(255,122,46,0.03));border:1px solid rgba(255,122,46,0.32);border-radius:18px;padding:32px 30px;text-align:center;}
+  .cta-inner h2{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:24px;margin-bottom:10px;}
+  .cta-inner p{color:var(--slate-light);font-size:16px;margin-bottom:22px;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:10px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#10131a;font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;box-shadow:0 10px 30px -8px rgba(255,122,46,0.5);transition:transform .15s;}
+  .btn:hover{transform:translateY(-2px);text-decoration:none;}
+
+  footer{border-top:1px solid var(--line);margin-top:20px;}
+  .foot-inner{max-width:1000px;margin:0 auto;padding:34px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--slate);}
+  .foot-inner a{color:var(--slate-light);}
+
+  @media(max-width:560px){ .hero{padding:44px 20px 12px;} main{padding:28px 20px 40px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="../index.html" class="logo"><span class="mark">FR</span> FIFO Route</a>
+    <a href="../index.html" class="back">← На главную</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">Блог</div>
+  <h1>Про FIFO и offshore — честно и по делу</h1>
+  <p>Гайды о том, как устроена работа за границей для русскоязычных специалистов: графики, зарплаты, визы, сертификаты и первые шаги. Без обещаний «работы мечты за неделю».</p>
+</div>
+
+<main>
+  <!-- ARTICLE_LIST_START — сюда добавляются новые статьи (для автоматизации) -->
+  <div class="grid">
+
+    <a href="rabota-offshore-vetryaki.html" class="card">
+      <div class="tag">Отрасли и вакансии</div>
+      <h2>Работа на офшорных ветряках: спрос, зарплаты, сертификаты</h2>
+      <p>Растущая ниша с нехваткой людей: кого ищут на морские ветропарки, при чём тут сертификат GWO и как войти.</p>
+      <div class="foot"><span class="date">13 июля 2026</span><span class="read">Читать →</span></div>
+    </a>
+
+    <a href="chto-takoe-fifo-rabota.html" class="card">
+      <div class="tag">Разбор для новичков</div>
+      <h2>Что такое FIFO-работа и сколько на ней зарабатывают</h2>
+      <p>Как устроен вахтовый график, какие деньги реальны и что нужно, чтобы попасть на FIFO. Честно и по делу.</p>
+      <div class="foot"><span class="date">13 июля 2026</span><span class="read">Читать →</span></div>
+    </a>
+
+  </div>
+  <!-- ARTICLE_LIST_END -->
+</main>
+
+<div class="cta-strip">
+  <div class="cta-inner">
+    <h2>Готовы сделать первый шаг?</h2>
+    <p>Пройдите короткий тест — 4 вопроса, и вы поймёте, какой пакет и какой первый шаг подходят именно вам.</p>
+    <a href="../index.html#quiz" class="btn">Пройти тест →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 FIFO Route</span>
+    <span><a href="../index.html">Главная</a> · <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener">Telegram-поддержка</a> · <a href="mailto:hello@fiforoute.work">hello@fiforoute.work</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
