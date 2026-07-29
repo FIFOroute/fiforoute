@@ -68,6 +68,22 @@
   footer p a:hover{color:var(--orange);}
   @media(max-width:600px){h1{font-size:28px;}main{padding:44px 0 70px;}}
 </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HNY3HQFENK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HNY3HQFENK');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xu5r0anx2y");
+</script>
 </head>
 <body>
 
@@ -183,5 +199,25 @@
   </div>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // Stripe pogas — ar pakotnes nosaukumu
+  var pkgs = {'28800':'Start','28801':'Karjernyj bilder','28802':'Akselerator','28803':'VIP'};
+  document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var suffix = a.href.slice(-5);
+      var pkg = pkgs[suffix] || 'unknown';
+      if (typeof gtag === 'function') gtag('event', 'begin_checkout', {package: pkg, link_url: a.href});
+      if (typeof clarity === 'function') clarity('event', 'stripe_click_' + pkg);
+    });
+  });
+  // Telegram parejas
+  document.querySelectorAll('a[href*="t.me"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (typeof gtag === 'function') gtag('event', 'telegram_click', {link_url: a.href});
+    });
+  });
+});
+</script>
 </body>
 </html>
