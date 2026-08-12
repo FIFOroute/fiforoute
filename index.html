@@ -415,6 +415,12 @@
   .pkg-list li{display:flex;gap:10px;font-size:13.8px;color:var(--ice);align-items:flex-start;}
   .pkg-list li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0;}
   .pkg-actions{display:flex;flex-direction:column;gap:10px;}
+  .pkg-more{
+    display:block;text-align:center;font-size:13px;font-weight:600;
+    color:var(--slate-light);padding:9px 0 2px;letter-spacing:.01em;
+  }
+  .pkg-more:hover{color:var(--orange);}
+
   .pkg-guarantee{
     display:flex;align-items:center;justify-content:center;gap:8px;
     font-size:12px;color:var(--slate-light);font-weight:600;margin-top:12px;
@@ -963,7 +969,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       <div class="section-head center reveal">
         <span class="eyebrow">Пакеты услуг</span>
         <h2>Выберите уровень сопровождения</h2>
-        <p>Все пакеты включают <a href="refund-policy.html" style="color:var(--orange);">100% гарантию удовлетворённости</a> и черновик резюме в течение 2 рабочих дней.</p>
+        <p>Все пакеты включают <a href="refund-policy.html" style="color:var(--orange);">100% гарантию удовлетворённости</a> и черновик резюме в течение 2 рабочих дней. <a href="/pakety/" style="color:var(--orange);">Сравнить все пакеты →</a></p>
       </div>
       <div class="pkg-grid">
         <div class="pkg-card reveal">
@@ -978,6 +984,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           </ul>
           <div class="pkg-actions">
             <a href="https://buy.stripe.com/14A14o1kX4XNas648b28800" target="_blank" rel="noopener" class="btn btn-ghost btn-block">Оплатить «Старт» — $169</a>
+            <a href="/pakety/start/" class="pkg-more">Подробнее о пакете →</a>
           </div>
           <div class="pkg-guarantee">🛡 Гарантия удовлетворённости</div>
         </div>
@@ -994,6 +1001,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           </ul>
           <div class="pkg-actions">
             <a href="https://buy.stripe.com/bJe8wQbZB3TJ8jYawz28801" target="_blank" rel="noopener" class="btn btn-primary btn-block">Оплатить — $329</a>
+            <a href="/pakety/karernyy-bilder/" class="pkg-more">Подробнее о пакете →</a>
           </div>
           <div class="pkg-guarantee">🛡 Гарантия удовлетворённости</div>
         </div>
@@ -1009,6 +1017,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           </ul>
           <div class="pkg-actions">
             <a href="https://buy.stripe.com/fZu8wQ0gT75Vbwa0VZ28802" target="_blank" rel="noopener" class="btn btn-ghost btn-block">Оплатить «Акселератор» — $599</a>
+            <a href="/pakety/akselerator/" class="pkg-more">Подробнее о пакете →</a>
           </div>
           <div class="pkg-guarantee">🛡 Гарантия удовлетворённости</div>
         </div>
@@ -1025,6 +1034,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           </ul>
           <div class="pkg-actions">
             <a href="https://buy.stripe.com/28E8wQ3t5duj57MfQT28803" target="_blank" rel="noopener" class="btn btn-ghost btn-block">Оплатить «VIP» — $1299</a>
+            <a href="/pakety/vip-pod-klyuch/" class="pkg-more">Подробнее о пакете →</a>
           </div>
           <div class="pkg-guarantee">🛡 Гарантия удовлетворённости</div>
         </div>
