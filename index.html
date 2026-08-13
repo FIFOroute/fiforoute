@@ -379,6 +379,51 @@
   .quiz-result h3{font-size:28px;margin-bottom:14px;}
   .quiz-result p{color:var(--slate-light);font-size:15px;margin-bottom:26px;max-width:560px;}
   .quiz-result-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
+
+  /* ===== LEAD MAGNET (бесплатный PDF после теста) ===== */
+  .lead-magnet{
+    margin-top:26px;padding-top:24px;border-top:1px solid var(--line-strong);
+  }
+  .lm-top{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px;}
+  .lm-ic{
+    flex-shrink:0;width:44px;height:44px;border-radius:11px;
+    background:rgba(255,122,46,0.14);border:1px solid rgba(255,122,46,0.34);
+    display:flex;align-items:center;justify-content:center;font-size:20px;
+  }
+  .lm-top h4{
+    font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;
+    margin-bottom:6px;color:var(--ice);letter-spacing:0;
+  }
+  .lm-top p{color:var(--slate-light);font-size:14px;margin:0;max-width:520px;}
+  .lm-form{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;}
+  .lm-field{flex:1 1 260px;min-width:220px;}
+  .lm-form input[type=email]{
+    width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--line-strong);
+    border-radius:10px;padding:14px 16px;color:var(--ice);font-family:'Manrope',sans-serif;
+    font-size:14.5px;transition:border-color .15s;
+  }
+  .lm-form input[type=email]::placeholder{color:var(--slate);}
+  .lm-form input[type=email]:focus{outline:none;border-color:var(--orange);}
+  .lm-form input[type=email].err{border-color:#ff5a5a;}
+  .lm-form .btn{flex:0 0 auto;}
+  .lm-consent{
+    display:flex;gap:9px;align-items:flex-start;margin-top:12px;
+    font-size:12.5px;color:var(--slate-light);line-height:1.55;
+  }
+  .lm-consent input{margin-top:2px;accent-color:var(--orange);flex-shrink:0;width:15px;height:15px;}
+  .lm-consent a{color:var(--orange);}
+  .lm-msg{margin-top:12px;font-size:13.5px;font-weight:600;display:none;}
+  .lm-msg.show{display:block;}
+  .lm-msg.ok{color:var(--green);}
+  .lm-msg.bad{color:#ff8a8a;}
+  .lm-done{display:none;}
+  .lm-done.show{display:block;}
+  .lm-done .btn{margin-top:6px;}
+  .lm-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+  @media(max-width:560px){
+    .lm-form .btn{width:100%;}
+    .lm-top{gap:12px;}
+  }
   .quiz-restart{color:var(--slate-light);font-size:13px;font-weight:600;text-decoration:underline;}
   .quiz-restart:hover{color:var(--orange);}
   @keyframes quizFade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
@@ -912,6 +957,36 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             <a href="#contact" class="btn btn-primary" id="quizCtaContact">Выбрать этот пакет</a>
             <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener" class="btn btn-ghost">Обсудить с менеджером в Telegram</a>
           </div>
+          <div class="lead-magnet">
+            <div class="lm-top">
+              <div class="lm-ic">📄</div>
+              <div>
+                <h4>Забрать бесплатный чек-лист: 12 документов для работы за границей</h4>
+                <p>PDF на 6 страниц: что готовить заранее, сколько оформляется каждый документ и в каком порядке их делать. Можно скачать сразу — почта по желанию.</p>
+              </div>
+            </div>
+
+            <div id="lmFormWrap">
+              <div class="lm-form">
+                <div class="lm-field">
+                  <input type="email" id="lmEmail" placeholder="Ваш e-mail (необязательно)" autocomplete="email" inputmode="email">
+                </div>
+                <input type="text" class="lm-hp" id="lmCompany" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="button" class="btn btn-primary" id="lmSubmit">Получить чек-лист</button>
+              </div>
+              <label class="lm-consent">
+                <input type="checkbox" id="lmConsent">
+                <span>Согласен получить чек-лист и изредка — полезные материалы о работе на вахте и offshore. Отписаться можно в любой момент. <a href="privacy-policy.html" target="_blank" rel="noopener">Политика конфиденциальности</a>.</span>
+              </label>
+              <div class="lm-msg" id="lmMsg"></div>
+            </div>
+
+            <div class="lm-done" id="lmDone">
+              <div class="lm-msg ok show" id="lmDoneText"></div>
+              <a href="assets/fifo-route-checklist-dokumentov.pdf" download class="btn btn-ghost" id="lmDownload">⬇ Скачать PDF</a>
+            </div>
+          </div>
+
           <button type="button" class="quiz-restart" id="quizRestart">↺ Пройти тест заново</button>
         </div>
       </div>
@@ -1498,6 +1573,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         recommendedPackage = 'Старт';
       }
 
+      window.__fifoQuizPackage = recommendedPackage;
+      window.__fifoQuizAnswers = JSON.parse(JSON.stringify(answers));
       resultTitle.textContent = title;
       resultText.textContent = text;
       ctaContact.onclick = function(){
@@ -1510,12 +1587,125 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       resultEl.classList.add('active');
     }
 
+    // ===== LEAD MAGNET: добровольный e-mail + PDF =====
+    (function(){
+      // ВСТАВЬТЕ СЮДА URL вебхука из Make.com (Custom Webhook → Copy address to clipboard).
+      // Пока строка пустая — форма работает, но письмо не отправляется:
+      // пользователь просто скачивает PDF напрямую.
+      var WEBHOOK_URL = '';
+
+      var wrap = document.getElementById('lmFormWrap');
+      var done = document.getElementById('lmDone');
+      var doneText = document.getElementById('lmDoneText');
+      var email = document.getElementById('lmEmail');
+      var consent = document.getElementById('lmConsent');
+      var honeypot = document.getElementById('lmCompany');
+      var btn = document.getElementById('lmSubmit');
+      var msg = document.getElementById('lmMsg');
+      if(!btn || !wrap || !done) return;
+
+      function say(text, kind){
+        msg.textContent = text;
+        msg.className = 'lm-msg show ' + kind;
+      }
+      function finish(text){
+        wrap.style.display = 'none';
+        doneText.textContent = text;
+        done.classList.add('show');
+      }
+
+      btn.addEventListener('click', function(){
+        var val = (email.value || '').trim();
+
+        // Ничего не ввели — просто отдаём файл. Почта добровольная.
+        if(!val){
+          if (typeof gtag === 'function') gtag('event', 'lead_magnet_download', {method: 'no_email'});
+          finish('Готово — чек-лист можно скачать прямо сейчас.');
+          setTimeout(function(){ document.getElementById('lmDownload').click(); }, 250);
+          return;
+        }
+
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val)){
+          email.classList.add('err');
+          say('Проверьте адрес — кажется, в нём опечатка. Или оставьте поле пустым и скачайте файл без почты.', 'bad');
+          email.focus();
+          return;
+        }
+        email.classList.remove('err');
+
+        if(!consent.checked){
+          say('Отметьте согласие — или оставьте поле почты пустым и скачайте файл сразу.', 'bad');
+          return;
+        }
+
+        if(honeypot && honeypot.value){ finish('Готово.'); return; }
+
+        btn.disabled = true;
+        btn.textContent = 'Отправляем…';
+
+        var payload = {
+          email: val,
+          source: 'quiz_lead_magnet',
+          recommended_package: (window.__fifoQuizPackage || ''),
+          answers: (window.__fifoQuizAnswers || {}),
+          page: location.pathname,
+          consent: true,
+          ts: new Date().toISOString()
+        };
+
+        function ok(){
+          if (typeof gtag === 'function') gtag('event', 'generate_lead', {method: 'quiz_lead_magnet'});
+          if (typeof clarity === 'function') clarity('event', 'lead_magnet_email');
+          finish('Готово! Отправили чек-лист на ' + val + '. Если письмо не пришло за 5 минут — проверьте папку «Спам» или скачайте файл кнопкой ниже.');
+        }
+
+        if(!WEBHOOK_URL){
+          // Вебхук ещё не подключён — не теряем человека, отдаём файл сразу.
+          if (typeof gtag === 'function') gtag('event', 'lead_magnet_download', {method: 'email_no_webhook'});
+          finish('Готово — скачайте чек-лист кнопкой ниже.');
+          return;
+        }
+
+        fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        }).then(function(r){
+          if(!r.ok) throw new Error('bad status');
+          ok();
+        }).catch(function(){
+          // Сеть или Make не ответили — человек всё равно получает файл.
+          if (typeof gtag === 'function') gtag('event', 'lead_magnet_download', {method: 'webhook_failed'});
+          finish('С отправкой письма возникла заминка, но файл доступен — скачайте его кнопкой ниже.');
+        });
+      });
+
+      // Enter в поле = нажатие кнопки
+      email.addEventListener('keydown', function(e){
+        if(e.key === 'Enter'){ e.preventDefault(); btn.click(); }
+      });
+
+      // Скачивание PDF — в аналитику
+      var dl = document.getElementById('lmDownload');
+      if(dl) dl.addEventListener('click', function(){
+        if (typeof gtag === 'function') gtag('event', 'file_download', {file_name: 'checklist_12_dokumentov'});
+      });
+    })();
+
     if(restartBtn){
       restartBtn.addEventListener('click', () => {
         current = 0;
         Object.keys(answers).forEach(k => delete answers[k]);
         history.length = 0;
         resultEl.classList.remove('active');
+        var w = document.getElementById('lmFormWrap');
+        var d = document.getElementById('lmDone');
+        var b = document.getElementById('lmSubmit');
+        var m = document.getElementById('lmMsg');
+        if(w) w.style.display = '';
+        if(d) d.classList.remove('show');
+        if(m) m.className = 'lm-msg';
+        if(b){ b.disabled = false; b.textContent = 'Получить чек-лист'; }
         showStep(0);
       });
     }
