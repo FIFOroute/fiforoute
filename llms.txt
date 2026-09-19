@@ -18,7 +18,15 @@
 - [Работа на офшорных ветряках](https://fiforoute.work/blog/rabota-offshore-vetryaki.html): спрос, зарплаты, сертификат GWO
 - [Почему резюме не проходит ATS-отбор](https://fiforoute.work/blog/pochemu-rezume-ne-prohodit-ats.html): как пройти автоматический фильтр
 - [Политика возврата](https://fiforoute.work/refund-policy.html)
+- [Политика конфиденциальности](https://fiforoute.work/privacy-policy.html)
 - [Условия использования](https://fiforoute.work/terms.html)
+
+## Пакеты услуг
+- [Все пакеты и сравнение](https://fiforoute.work/pakety/): четыре уровня подготовки, сравнительная таблица
+- [Старт — $169](https://fiforoute.work/pakety/start/): резюме под международный ATS-стандарт и разбор, куда с ним идти
+- [Карьерный билдер — $329](https://fiforoute.work/pakety/karernyy-bilder/): резюме, сопроводительное письмо, LinkedIn и консультация по визовому маршруту
+- [Акселератор — $599](https://fiforoute.work/pakety/akselerator/): полный пакет документов, стратегия подачи и сопровождение по шагам
+- [VIP под ключ — $1299](https://fiforoute.work/pakety/vip-pod-klyuch/): максимальное сопровождение от подготовки документов до вылета на объект
 
 ## Сообщество
 - Telegram-канал (вакансии и советы): https://t.me/fiforoute

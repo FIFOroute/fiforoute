@@ -33,11 +33,48 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://fiforoute.work/#organization",
   "name": "FIFO Route",
   "url": "https://fiforoute.work/",
-  "logo": "https://fiforoute.work/assets/og-banner.jpg",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://fiforoute.work/assets/Logo_FR.png"
+  },
+  "image": "https://fiforoute.work/assets/og-banner.jpg",
   "description": "Резюме под международный ATS-стандарт, визовое сопровождение и полная поддержка выхода на работу FIFO/offshore для русскоязычных специалистов.",
   "email": "hello@fiforoute.work",
+  "serviceType": "Подготовка резюме под международный ATS-стандарт, анализ визовых маршрутов и сопровождение трудоустройства на FIFO и offshore",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Россия"
+    },
+    {
+      "@type": "Country",
+      "name": "Беларусь"
+    },
+    {
+      "@type": "Country",
+      "name": "Казахстан"
+    },
+    "СНГ",
+    "Европа"
+  ],
+  "knowsLanguage": [
+    "ru"
+  ],
+  "priceRange": "$169–$1299",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "hello@fiforoute.work",
+      "url": "https://t.me/fiforoute_support_bot",
+      "availableLanguage": [
+        "ru"
+      ]
+    }
+  ],
   "sameAs": [
     "https://t.me/fiforoute",
     "https://www.instagram.com/fiforoute.work/",
@@ -47,10 +84,34 @@
     "@type": "OfferCatalog",
     "name": "Пакеты услуг FIFO Route",
     "itemListElement": [
-      {"@type": "Offer", "name": "Старт", "price": "169", "priceCurrency": "USD", "description": "Резюме под ATS-стандарт, сопроводительное письмо, 1 раунд правок, чек-лист визовых документов"},
-      {"@type": "Offer", "name": "Карьерный билдер", "price": "329", "priceCurrency": "USD", "description": "Резюме + персональная консультация по визе (60 мин), профили LinkedIn и Seek, 3 раунда правок"},
-      {"@type": "Offer", "name": "Акселератор", "price": "599", "priceCurrency": "USD", "description": "Сопровождение подачи визовых документов, подготовка к собеседованию, безлимитные правки"},
-      {"@type": "Offer", "name": "VIP под ключ", "price": "1299", "priceCurrency": "USD", "description": "Личный куратор, полное визовое сопровождение, помощь с билетами и медсправками, консультации 6 месяцев"}
+      {
+        "@type": "Offer",
+        "name": "Старт",
+        "price": "169",
+        "priceCurrency": "USD",
+        "description": "Резюме под ATS-стандарт, сопроводительное письмо, 1 раунд правок, чек-лист визовых документов"
+      },
+      {
+        "@type": "Offer",
+        "name": "Карьерный билдер",
+        "price": "329",
+        "priceCurrency": "USD",
+        "description": "Резюме + персональная консультация по визе (60 мин), профили LinkedIn и Seek, 3 раунда правок"
+      },
+      {
+        "@type": "Offer",
+        "name": "Акселератор",
+        "price": "599",
+        "priceCurrency": "USD",
+        "description": "Сопровождение подачи визовых документов, подготовка к собеседованию, безлимитные правки"
+      },
+      {
+        "@type": "Offer",
+        "name": "VIP под ключ",
+        "price": "1299",
+        "priceCurrency": "USD",
+        "description": "Личный куратор, полное визовое сопровождение, помощь с билетами и медсправками, консультации 6 месяцев"
+      }
     ]
   }
 }
@@ -731,6 +792,20 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "xu5r0anx2y");
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://fiforoute.work/#website",
+  "url": "https://fiforoute.work/",
+  "name": "FIFO Route",
+  "description": "Работа FIFO и offshore для русскоязычных специалистов: резюме под ATS-стандарт, визовый маршрут и сопровождение.",
+  "inLanguage": "ru-RU",
+  "publisher": {
+    "@id": "https://fiforoute.work/#organization"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -1227,6 +1302,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           <div class="tag">Резюме и отбор</div>
           <h3>Почему твоё резюме не проходит отбор (и при чём тут робот)</h3>
           <p>Отправил десятки откликов и тишина? Резюме отсеивает ATS-робот ещё до человека. Разбираем, как пройти фильтр.</p>
+          <span class="read">Читать →</span>
+        </a>
+        <a href="blog/chto-takoe-fifo-rabota.html" class="blog-card reveal">
+          <div class="tag">Разбор для новичков</div>
+          <h3>Что такое FIFO-работа и сколько на ней зарабатывают</h3>
+          <p>Как устроен вахтовый график, какие деньги реальны и что нужно, чтобы попасть на FIFO. Честно и по делу.</p>
           <span class="read">Читать →</span>
         </a>
       </div>

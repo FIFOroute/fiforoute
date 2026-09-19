@@ -31,15 +31,30 @@
   "headline": "Что такое FIFO-работа и сколько на ней зарабатывают",
   "description": "FIFO — это вахтовый метод на удалённых объектах с оплатой перелёта работодателем. Разбираем график, зарплаты и путь к трудоустройству для русскоязычных специалистов.",
   "image": "https://fiforoute.work/assets/og-banner.jpg",
-  "author": {"@type": "Organization", "name": "FIFO Route"},
+  "author": {
+    "@type": "Organization",
+    "name": "FIFO Route",
+    "@id": "https://fiforoute.work/#organization"
+  },
   "publisher": {
     "@type": "Organization",
     "name": "FIFO Route",
-    "logo": {"@type": "ImageObject", "url": "https://fiforoute.work/assets/og-banner.jpg"}
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fiforoute.work/assets/og-banner.jpg"
+    },
+    "@id": "https://fiforoute.work/#organization"
   },
   "datePublished": "2026-07-13",
-  "dateModified": "2026-07-13",
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://fiforoute.work/blog/chto-takoe-fifo-rabota.html"}
+  "dateModified": "2026-09-19",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://fiforoute.work/blog/chto-takoe-fifo-rabota.html"
+  },
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@id": "https://fiforoute.work/blog/#blog"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -114,6 +129,18 @@
   .btn:hover{transform:translateY(-2px);text-decoration:none;}
 
   /* FAQ */
+  /* Related + package link */
+  .related{margin:44px 0 0;}
+  .related h2{margin-bottom:18px;}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+  .related-grid a{display:block;border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--navy-soft);color:var(--ice);font-weight:600;font-size:15.5px;line-height:1.45;transition:border-color .18s, transform .18s;}
+  .related-grid a:hover{border-color:rgba(255,122,46,0.45);transform:translateY(-2px);text-decoration:none;}
+  .related-grid a span{display:block;margin-top:7px;font-size:13.5px;color:var(--slate-light);font-weight:400;}
+  .pkg-note{margin-top:18px;font-size:15px;color:var(--slate-light);}
+  .btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:10px;border:1px solid rgba(255,122,46,0.45);color:var(--orange);font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;margin-left:10px;transition:background .15s;}
+  .btn-ghost:hover{background:rgba(255,122,46,0.10);text-decoration:none;}
+  @media(max-width:520px){ .btn-ghost{margin:12px 0 0;} .cta-box .btn, .cta-box .btn-ghost{width:100%;} }
+
   .faq{margin:44px 0 0;}
   .faq h2{margin-bottom:20px;}
   .faq-item{border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;background:var(--navy-soft);}
@@ -147,13 +174,39 @@ t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "xu5r0anx2y");
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://fiforoute.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "https://fiforoute.work/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Что такое FIFO-работа и сколько на ней зарабатывают",
+      "item": "https://fiforoute.work/blog/chto-takoe-fifo-rabota.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <header>
   <div class="nav">
     <a href="/" class="logo"><span class="mark">FR</span> FIFO Route</a>
-    <a href="/" class="back">← На главную</a>
+    <a href="/blog/" class="back">← Все статьи блога</a>
   </div>
 </header>
 
@@ -229,6 +282,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     <h2>Не знаете, с чего начать?</h2>
     <p>Пройдите короткий тест на сайте — 4 вопроса, и вы поймёте, какой первый шаг подходит именно вам. Без ввода почты и телефона.</p>
     <a href="/#quiz" class="btn">Пройти тест →</a>
+    <a href="/pakety/start/" class="btn-ghost">Пакет «Старт» →</a>
+    <p class="pkg-note">Если базовая картина уже ясна и нужен первый профессиональный шаг — посмотрите пакет «Старт»: резюме под ATS-стандарт и разбор, куда с ним идти.</p>
   </div>
 
   <section class="faq">
@@ -247,13 +302,23 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     </div>
   </section>
 
+  <section class="related">
+    <h2>Читайте также</h2>
+    <div class="related-grid">
+      <a href="kak-legalno-uehat-na-vahtu-za-granicu.html">Как легально уехать на вахту за границу: маршруты 2026<span>Визовые опции для граждан РФ, РБ и Казахстана в 2026 году.</span></a>
+      <a href="pochemu-rezume-ne-prohodit-ats.html">Почему твоё резюме не проходит отбор (и при чём тут робот)<span>Как пройти автоматический фильтр работодателя.</span></a>
+      <a href="rabota-offshore-vetryaki.html">Работа на офшорных ветряках: спрос, зарплаты, сертификаты<span>Кого ищут на морские ветропарки и при чём тут сертификат GWO.</span></a>
+      <a href="/pakety/">Пакеты и цены FIFO Route<span>Четыре уровня подготовки — от резюме до полного сопровождения.</span></a>
+    </div>
+  </section>
+
   <p class="disclaimer">Материал носит информационный характер. FIFO Route помогает с подготовкой резюме, анализом визовых маршрутов и сопровождением, но не гарантирует получение визы или трудоустройство — эти решения принимают миграционные службы и работодатели.</p>
 </main>
 
 <footer>
   <div class="foot-inner">
     <span>© 2026 FIFO Route</span>
-    <span><a href="/">Главная</a> · <a href="rabota-offshore-vetryaki.html">Работа на ветряках</a> · <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener">Telegram-поддержка</a> · <a href="mailto:hello@fiforoute.work">hello@fiforoute.work</a></span>
+    <span><a href="/">Главная</a> · <a href="/blog/">Блог</a> · <a href="/pakety/">Пакеты</a> · <a href="rabota-offshore-vetryaki.html">Работа на ветряках</a> · <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener">Telegram-поддержка</a> · <a href="mailto:hello@fiforoute.work">hello@fiforoute.work</a></span>
   </div>
 </footer>
 
