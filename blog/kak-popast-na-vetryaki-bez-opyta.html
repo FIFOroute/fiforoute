@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как попасть на ветряки без опыта — onshore | FIFO Route</title>
+<meta name="description" content="Самый короткий вход в ветроэнергетику — не море, а суша. Какие модули GWO нужны, сколько курсы стоят в Балтии, кто платит и за сколько смен они окупаются.">
+<link rel="canonical" href="https://fiforoute.work/blog/kak-popast-na-vetryaki-bez-opyta.html">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как попасть на ветряки без опыта: начинать стоит с onshore">
+<meta property="og:description" content="Onshore — короткая дорога в отрасль: GWO Basic Safety Training, реальные цены и ставки без прикрас.">
+<meta property="og:url" content="https://fiforoute.work/blog/kak-popast-na-vetryaki-bez-opyta.html">
+<meta property="og:image" content="https://fiforoute.work/assets/og-banner.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="FIFO Route">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="../assets/FR.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0b1622">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy-deep:#0b1622; --navy:#101e2e; --navy-soft:#16283c;
+    --slate:#5c7187; --slate-light:#9fb0c2; --ice:#eef3f8;
+    --orange:#ff7a2e; --orange-deep:#e2611a; --green:#2bd9a3;
+    --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Manrope',sans-serif;background:var(--navy-deep);color:var(--ice);
+    line-height:1.7;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(ellipse at 80% -5%, rgba(255,122,46,0.10), transparent 55%);
+  }
+  a{color:var(--orange);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  header{position:sticky;top:0;z-index:50;background:rgba(11,22,34,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Oswald',sans-serif;font-weight:700;font-size:19px;letter-spacing:0.02em;color:var(--ice);text-transform:uppercase;}
+  .logo:hover{text-decoration:none;}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));display:flex;align-items:center;justify-content:center;font-size:15px;color:#10131a;font-weight:700;}
+  .nav .back{font-family:'Manrope';font-size:14px;color:var(--slate-light);font-weight:600;}
+  main{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
+  .eyebrow{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:13px;color:var(--orange);font-weight:600;margin-bottom:18px;}
+  h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(30px,6vw,46px);line-height:1.12;text-transform:uppercase;margin-bottom:20px;}
+  .lead{font-size:19px;color:var(--slate-light);margin-bottom:14px;}
+  .meta{font-size:13.5px;color:var(--slate);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:28px 0 40px;display:flex;gap:18px;flex-wrap:wrap;}
+  .meta span{display:flex;align-items:center;gap:7px;}
+  article h2{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:26px;letter-spacing:0.01em;margin:44px 0 16px;padding-top:8px;}
+  article h3{font-family:'Manrope';font-weight:700;font-size:19px;margin:28px 0 10px;color:var(--ice);}
+  article p{margin-bottom:18px;font-size:17px;color:#d7e0ea;}
+  article ul{margin:0 0 20px 0;padding-left:0;list-style:none;}
+  article ul li{position:relative;padding-left:28px;margin-bottom:11px;font-size:17px;color:#d7e0ea;}
+  article ul li::before{content:"";position:absolute;left:2px;top:11px;width:8px;height:8px;border-radius:50%;background:var(--orange);}
+  article strong{color:var(--ice);}
+  .callout{background:linear-gradient(160deg,var(--navy-soft),var(--navy));border:1px solid var(--line-strong);border-left:3px solid var(--orange);border-radius:12px;padding:22px 24px;margin:30px 0;}
+  .callout p{margin:0;font-size:16px;color:var(--slate-light);}
+  .callout p strong{color:var(--ice);}
+  .stat-row{display:flex;gap:16px;flex-wrap:wrap;margin:30px 0;}
+  .stat{flex:1;min-width:160px;background:linear-gradient(160deg,var(--navy-soft),var(--navy));border:1px solid var(--line);border-radius:14px;padding:22px 20px;}
+  .stat .num{font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:var(--orange);line-height:1;}
+  .stat .lbl{font-size:14px;color:var(--slate-light);margin-top:8px;}
+  .table-wrap{overflow-x:auto;margin:26px 0;border:1px solid var(--line);border-radius:12px;}
+  table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:440px;}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);}
+  th{font-family:'Oswald';text-transform:uppercase;font-size:13px;letter-spacing:0.05em;color:var(--orange);font-weight:600;}
+  td{color:#d7e0ea;}
+  tr:last-child td{border-bottom:none;}
+  .cta-box{background:linear-gradient(150deg,rgba(255,122,46,0.14),rgba(255,122,46,0.03));border:1px solid rgba(255,122,46,0.32);border-radius:18px;padding:34px 30px;margin:46px 0 20px;text-align:center;}
+  .cta-box h2{margin:0 0 12px;font-size:26px;}
+  .cta-box p{color:var(--slate-light);font-size:16px;margin-bottom:24px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:10px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#10131a;font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;box-shadow:0 10px 30px -8px rgba(255,122,46,0.5);transition:transform .15s;}
+  .btn:hover{transform:translateY(-2px);text-decoration:none;}
+  /* Related + package link */
+  .related{margin:44px 0 0;}
+  .related h2{margin-bottom:18px;}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+  .related-grid a{display:block;border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--navy-soft);color:var(--ice);font-weight:600;font-size:15.5px;line-height:1.45;transition:border-color .18s, transform .18s;}
+  .related-grid a:hover{border-color:rgba(255,122,46,0.45);transform:translateY(-2px);text-decoration:none;}
+  .related-grid a span{display:block;margin-top:7px;font-size:13.5px;color:var(--slate-light);font-weight:400;}
+  .pkg-note{margin-top:18px;font-size:15px;color:var(--slate-light);}
+  .btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:10px;border:1px solid rgba(255,122,46,0.45);color:var(--orange);font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;margin-left:10px;transition:background .15s;}
+  .btn-ghost:hover{background:rgba(255,122,46,0.10);text-decoration:none;}
+  @media(max-width:520px){ .btn-ghost{margin:12px 0 0;} .cta-box .btn, .cta-box .btn-ghost{width:100%;} }
+
+  .faq{margin:44px 0 0;}
+  .faq h2{margin-bottom:20px;}
+  .faq-item{border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;background:var(--navy-soft);}
+  .faq-item h3{margin:0 0 8px;font-size:17px;color:var(--ice);}
+  .faq-item p{margin:0;font-size:15.5px;color:var(--slate-light);}
+  footer{border-top:1px solid var(--line);margin-top:40px;}
+  .foot-inner{max-width:760px;margin:0 auto;padding:34px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--slate);}
+  .foot-inner a{color:var(--slate-light);}
+  .disclaimer{font-size:13.5px;color:var(--slate);font-style:italic;margin-top:36px;padding-top:22px;border-top:1px solid var(--line);}
+  @media(max-width:560px){
+    main{padding:38px 20px 30px;}
+    article p, article ul li{font-size:16px;}
+  }
+</style>
+<script src="/assets/cookie-consent.js"></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HNY3HQFENK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HNY3HQFENK');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xu5r0anx2y");
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Как попасть на ветряки без опыта: начинать стоит с onshore",
+  "description": "Onshore-ветроэнергетика как точка входа в отрасль без опыта: модули GWO Basic Safety Training, цены в учебных центрах Латвии и Литвы, три модели оплаты обучения, реальные ставки и графики ротаций.",
+  "image": "https://fiforoute.work/assets/og-banner.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "FIFO Route",
+    "@id": "https://fiforoute.work/#organization"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "FIFO Route",
+    "@id": "https://fiforoute.work/#organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fiforoute.work/assets/Logo_FR.png"
+    }
+  },
+  "datePublished": "2026-09-19",
+  "dateModified": "2026-09-19",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@id": "https://fiforoute.work/blog/#blog"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://fiforoute.work/blog/kak-popast-na-vetryaki-bez-opyta.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Можно ли попасть на ветряки без опыта в отрасли?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, чаще всего вход происходит на onshore — наземные ветропарки. Для старта на позиции техника обычно достаточно GWO Basic Safety Training и профильных рабочих навыков (электрика, механика, работа руками). Остальные сертификаты добавляют уже в процессе работы, и нередко за счёт компании."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем GWO BST для onshore отличается от offshore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Onshore-версия состоит из четырёх модулей: Working at Height, First Aid, Manual Handling, Fire Awareness. В offshore-версию добавляется пятый модуль — Sea Survival с элементом Boat Transfer. Из-за этого offshore-курс длится дольше и стоит дороже."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоит GWO Basic Safety Training и как долго действует сертификат?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "В учебных центрах Балтии полный onshore-курс стоит примерно 500–600 евро, offshore — примерно 600–770 евро, в зависимости от города и формата. Сертификат действует 2 года, после чего проходится обновление. Цены и условия проверяйте на дату записи у самого центра."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Кто оплачивает обучение — работник или компания?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Встречаются три модели: компания оплачивает курс полностью, оплачивает и постепенно удерживает часть из зарплаты, либо кандидат платит сам. Какая модель будет у вас — зависит от компании, страны и того, насколько остро нужен ваш профиль."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://fiforoute.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "https://fiforoute.work/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Как попасть на ветряки без опыта: начинать стоит с onshore",
+      "item": "https://fiforoute.work/blog/kak-popast-na-vetryaki-bez-opyta.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="/" class="logo"><span class="mark">FR</span> FIFO Route</a>
+    <a href="/blog/" class="back">← Все статьи блога</a>
+  </div>
+</header>
+
+<main>
+  <div class="eyebrow">Вход в отрасль</div>
+  <h1>Как попасть на ветряки без опыта: почему начинать стоит с onshore</h1>
+  <p class="lead">Почти все, кто пишет нам про ветряки, спрашивают про море. А самая короткая дорога в отрасль идёт по суше — и стоит она дешевле, чем принято думать.</p>
+  <div class="meta">
+    <span>🗓 19 сентября 2026</span>
+    <span>⏱ Чтение 8 минут</span>
+    <span>✈️ FIFO Route</span>
+  </div>
+
+  <article>
+    <p>Я пришёл в ветроэнергетику не из энергетики. Я управлял магазином рабочей одежды, и у нас её покупали ребята, которые обслуживают ветрогенераторы. Разговорился с ними раз, другой — и понял, что отрасль растёт быстрее, чем успевает набирать людей, а платят там заметно выше, чем в том, чем занимался я.</p>
+
+    <p>Дальше было проще, чем я ожидал. Я нашёл компанию, которая сама отправляет людей на обучение в Польшу. Закрыл сертификаты — и через две недели уже работал в Германии.</p>
+
+    <p>Самым сложным во всей истории оказалось не обучение и не виза. Самым сложным было составить резюме так, как его ждут в отрасли. Об этом — в конце.</p>
+
+    <h2>Onshore или offshore: с чего реально начинать</h2>
+
+    <p>Морские ветропарки выглядят эффектнее и платят больше. Но если у вас нет опыта в отрасли, начинать логичнее с onshore — наземных ветропарков.</p>
+
+    <p>Причина простая: порог входа ниже. Для onshore нужен базовый пакет безопасности GWO и ваши рабочие руки. Для offshore к этому добавляются морские требования, медицина и, как правило, ожидание опыта. Отрасль растёт настолько быстро, что нужны буквально все специальности — но самый предсказуемый вход — это позиция техника, а дальше вы добираете сертификаты под конкретное направление.</p>
+
+    <div class="callout">
+      <p><strong>Практический смысл:</strong> onshore — это не «низшая лига». Это способ попасть внутрь отрасли, где остальное обучение вам чаще всего оплатят уже как сотруднику.</p>
+    </div>
+
+    <h2>Что такое GWO Basic Safety Training</h2>
+
+    <p>GWO (Global Wind Organisation) — отраслевой стандарт безопасности, который признают производители и подрядчики по всему миру. Basic Safety Training, или BST, — это тот самый базовый пакет, без которого на турбину не пустят.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Модуль</th><th>Onshore</th><th>Offshore</th></tr>
+        <tr><td>Working at Height (включая R-ALF)</td><td>✅</td><td>✅</td></tr>
+        <tr><td>First Aid</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Manual Handling</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Fire Awareness</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Sea Survival (включая Boat Transfer)</td><td>—</td><td>✅</td></tr>
+        <tr><td>Длительность в учебном центре</td><td>4 дня</td><td>5 дней</td></tr>
+        <tr><td>Срок действия сертификата</td><td>2 года</td><td>2 года</td></tr>
+      </table>
+    </div>
+
+    <p>Разница между версиями — ровно один модуль. Если вы идёте на сушу, Sea Survival вам сейчас не нужен: его добирают тогда, когда появляется offshore-контракт.</p>
+
+    <h2>Где проходить и сколько это стоит</h2>
+
+    <p>Курсы GWO проводят в десятках стран Европы, но дешевле всего — в Польше, Латвии и Литве. При этом сертификат один и тот же: он признаётся везде, где действует стандарт GWO.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Центр</th><th>BST onshore</th><th>BST offshore</th></tr>
+        <tr><td>Рига, Латвия</td><td>от ~600 €</td><td>от ~770 €</td></tr>
+        <tr><td>Клайпеда, Литва</td><td>от ~500 €</td><td>от ~600 €</td></tr>
+        <tr><td>Гибридный формат (e-learning + практика)</td><td>от ~450 €</td><td>от ~550 €</td></tr>
+      </table>
+    </div>
+
+    <p>Отдельно стоит знать вот что: у многих компаний есть прямые договоры с учебными центрами. Это значит, что вас могут отправить на обучение в любую точку мира — и вопрос цены для вас закрывается вместе с трудоустройством.</p>
+
+    <div class="callout">
+      <p><strong>Цены проверяйте на дату записи.</strong> Учебные центры меняют прайс и расписание, а формат (полный курс в центре или гибрид) влияет на стоимость сильнее, чем страна. Цифры выше — ориентир, а не оферта.</p>
+    </div>
+
+    <h2>Кто платит за обучение: три модели</h2>
+
+    <p>Здесь много мифов, поэтому по порядку. Встречаются ровно три варианта:</p>
+
+    <ul>
+      <li><strong>Компания оплачивает полностью.</strong> Обычно так делают, когда остро нужен специалист вашего профиля. У крупных подрядчиков под это бывают отдельные программы набора новичков.</li>
+      <li><strong>Компания оплачивает и удерживает из зарплаты.</strong> Небольшими частями, растянуто на несколько месяцев. Вы выходите на работу, не вкладывая денег на старте.</li>
+      <li><strong>Вы платите сами.</strong> Самостоятельный, но и самый быстрый вариант — вы не привязаны к одному работодателю.</li>
+    </ul>
+
+    <p>И про третий вариант — самое важное. Посчитаем честно, на минимальных цифрах.</p>
+
+    <div class="callout">
+      <p>Курс: <strong>~600 €</strong>. Ставка техника на onshore: <strong>от 20 €/час</strong>, то есть около 160 € за смену. Плюс суточные — <strong>от 35 €/день</strong>. Итого около <strong>195 € за рабочий день</strong>.</p>
+      <p>Обучение окупается примерно за <strong>три рабочие смены</strong>.</p>
+    </div>
+
+    <h2>Сколько платят на ветряках</h2>
+
+    <p>Цифры ниже — то, что мы реально видим по контрактам. Конкретную ставку всегда называет работодатель в конкретной вакансии, и она зависит от страны, подрядчика и вашей квалификации.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th></th><th>Onshore</th><th>Offshore</th></tr>
+        <tr><td>Техник на входе</td><td>от 20 €/час</td><td>от 4 500 €/месяц</td></tr>
+        <tr><td>Суточные</td><td>от 35 €/день</td><td>обычно включены в ставку</td></tr>
+        <tr><td>Опытные и узкие специалисты</td><td>выше, по профилю</td><td>до 10 000 € и выше</td></tr>
+      </table>
+    </div>
+
+    <p>Когда вы уже вышли на контракт, дорога, проживание и снаряжение — на стороне работодателя. Это норма отрасли, а не бонус.</p>
+
+    <h2>Как устроены ротации</h2>
+
+    <p>Важная деталь, на которой путаются почти все: в ветроэнергетике ротации считают <strong>в неделях</strong>, а не в днях, как на нефтяных платформах.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Тип</th><th>Типичный график</th></tr>
+        <tr><td>Offshore</td><td>2 недели на объекте / 2 недели дома (может сдвигаться на неделю из-за погоды и логистики)</td></tr>
+        <tr><td>Onshore</td><td>4 недели / 1 неделя, либо 6 недель / 2 недели</td></tr>
+      </table>
+    </div>
+
+    <p>Offshore-график мягче, но и попасть туда сложнее. Onshore требует больше выносливости по длительности вахты — зато это реальный вход в отрасль за пару недель.</p>
+
+    <h2>Кто нанимает</h2>
+
+    <p>Отрасль держится на производителях турбин и сервисных подрядчиках. Имена, которые встречаются чаще других: Vestas, Siemens Gamesa, Nordex, GE Vernova, Global Wind Service. Есть и нишевые игроки — например, латвийская Aerones, которая обслуживает лопасти роботизированными системами.</p>
+
+    <p>Конкретный работодатель зависит от того, с кем вы подпишете контракт, а страна — от проекта. Если у вас есть предпочтение по стране, это сужает выбор вакансий, но сделать поиск адресным можно.</p>
+
+    <h2>Два мифа, с которыми к нам приходят чаще всего</h2>
+
+    <p><strong>Миф первый: «это займёт полгода».</strong> Базовый пакет GWO закрывается за 4–5 дней в учебном центре. Мой собственный путь от решения до первой смены в Германии занял две недели. Это не гарантия сроков — это пример того, что отрасль умеет двигаться быстро, когда специалист ей нужен.</p>
+
+    <p><strong>Миф второй: «виза — это непроходимо».</strong> Визовый маршрут — процедура, а не лотерея: у неё есть понятный порядок шагов. Сложность обычно возникает не из-за самой визы, а из-за неправильной последовательности: люди начинают не с того конца. Из стран, куда сейчас реально тяжело зайти, стоит отдельно назвать США.</p>
+
+    <div class="callout">
+      <p><strong>Мы не гарантируем визу или трудоустройство</strong> — эти решения принимают миграционные службы и работодатели, и это вне контроля любого агентства. Мы отвечаем за то, что ваши документы и резюме будут подготовлены на том уровне, который отрасль ожидает, и что вы на каждом шаге будете понимать, что происходит дальше.</p>
+    </div>
+
+    <h2>Что на самом деле тормозит людей</h2>
+
+    <p>Возвращаюсь к тому, с чего начал. Сертификаты закрываются за неделю. Виза — процедура. А вот резюме останавливает людей месяцами.</p>
+
+    <p>Международные подрядчики разбирают отклики через ATS — систему, которая отсеивает резюме ещё до того, как его увидит человек. Резюме в привычном постсоветском формате она просто не читает. Человек отправляет пятьдесят откликов, не получает ни одного ответа и решает, что «без опыта не берут». Хотя его резюме не дошло ни до одного рекрутера.</p>
+
+    <p>Это была самая сложная часть моего собственного пути. Именно поэтому мы начали с неё, когда делали FIFO Route.</p>
+
+    <h2>Реальный порядок шагов</h2>
+
+    <ol>
+      <li>Определиться: onshore как вход или сразу offshore, если профиль уже подходит.</li>
+      <li>Привести резюме к международному ATS-стандарту — <em>до</em> того, как начнёте рассылать отклики.</li>
+      <li>Закрыть GWO Basic Safety Training — или найти компанию, которая оплатит его за вас.</li>
+      <li>Разобрать визовый маршрут под ваше гражданство и целевую страну.</li>
+      <li>Выходить на подрядчиков адресно, а не веером.</li>
+    </ol>
+  </article>
+
+  <div class="cta-box">
+    <h2>Не знаете, с какого шага начинать?</h2>
+    <p>Пройдите короткий тест — 4 вопроса, и вы поймёте, какой путь и какой первый шаг подходят именно вам. Без ввода почты и телефона.</p>
+    <a href="/#quiz" class="btn">Пройти тест →</a>
+    <a href="/pakety/start/" class="btn-ghost">Пакет «Старт» →</a>
+    <p class="pkg-note">Если понятно, что упирается всё именно в резюме — пакет «Старт» решает ровно эту задачу: резюме под ATS-стандарт и чек-лист визовых документов.</p>
+  </div>
+
+  <section class="faq">
+    <h2>Частые вопросы</h2>
+    <div class="faq-item">
+      <h3>Можно ли попасть на ветряки без опыта в отрасли?</h3>
+      <p>Да, чаще всего вход происходит через onshore. Для старта техником обычно достаточно GWO Basic Safety Training и профильных рабочих навыков. Остальные сертификаты добирают уже в процессе работы — нередко за счёт компании.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Чем GWO BST для onshore отличается от offshore?</h3>
+      <p>Одним модулем. В offshore-версию добавляется Sea Survival с элементом Boat Transfer — из-за этого курс длиннее на день и дороже.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Сколько действует сертификат GWO?</h3>
+      <p>Два года, затем проходится обновление. Обновление короче и дешевле первичного курса.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Кто оплачивает обучение — работник или компания?</h3>
+      <p>Встречаются все три варианта: компания платит полностью, платит с последующим удержанием из зарплаты, либо платит сам кандидат. Зависит от компании, страны и того, насколько нужен ваш профиль.</p>
+    </div>
+  </section>
+
+  <section class="related">
+    <h2>Читайте также</h2>
+    <div class="related-grid">
+      <a href="rabota-offshore-vetryaki.html">Работа на офшорных ветряках: спрос, зарплаты, сертификаты<span>Следующий шаг после onshore: что меняется в море.</span></a>
+      <a href="pochemu-rezume-ne-prohodit-ats.html">Почему твоё резюме не проходит отбор (и при чём тут робот)<span>Та самая причина, по которой отклики уходят в тишину.</span></a>
+      <a href="kak-legalno-uehat-na-vahtu-za-granicu.html">Как легально уехать на вахту за границу: маршруты 2026<span>Визовые опции для граждан РФ, РБ и Казахстана.</span></a>
+      <a href="/pakety/">Пакеты и цены FIFO Route<span>Четыре уровня подготовки — от резюме до полного сопровождения.</span></a>
+    </div>
+  </section>
+
+  <p class="disclaimer">Материал носит информационный характер и основан на практике FIFO Route и открытых данных учебных центров на сентябрь 2026 года. Цены, требования и графики меняются — проверяйте их на дату обращения. FIFO Route помогает с подготовкой резюме, анализом визовых маршрутов и сопровождением, но не гарантирует получение визы или трудоустройство — эти решения принимают миграционные службы и работодатели.</p>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 FIFO Route</span>
+    <span><a href="/">Главная</a> · <a href="/blog/">Блог</a> · <a href="/pakety/">Пакеты</a> · <a href="rabota-offshore-vetryaki.html">Офшорные ветряки</a> · <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener">Telegram-поддержка</a></span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // Stripe pogas — ar pakotnes nosaukumu
+  var pkgs = {'28800':'Start','28801':'Karjernyj bilder','28802':'Akselerator','28803':'VIP'};
+  document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var suffix = a.href.slice(-5);
+      var pkg = pkgs[suffix] || 'unknown';
+      if (typeof gtag === 'function') gtag('event', 'begin_checkout', {package: pkg, link_url: a.href});
+      if (typeof clarity === 'function') clarity('event', 'stripe_click_' + pkg);
+    });
+  });
+  // Telegram parejas
+  document.querySelectorAll('a[href*="t.me"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (typeof gtag === 'function') gtag('event', 'telegram_click', {link_url: a.href});
+    });
+  });
+});
+</script>
+</body>
+</html>
