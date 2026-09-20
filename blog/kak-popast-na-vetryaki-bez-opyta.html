@@ -77,6 +77,13 @@
   .cta-box p{color:var(--slate-light);font-size:16px;margin-bottom:24px;}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:10px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#10131a;font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;box-shadow:0 10px 30px -8px rgba(255,122,46,0.5);transition:transform .15s;}
   .btn:hover{transform:translateY(-2px);text-decoration:none;}
+  /* Author box */
+  .author-box{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:14px;background:var(--navy-soft);}
+  .author-box .ava{flex:0 0 52px;width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;color:#10131a;}
+  .author-box .who{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.06em;font-size:14px;color:var(--ice);margin-bottom:8px;}
+  .author-box p{margin:0;font-size:15px;color:var(--slate-light);line-height:1.6;}
+  @media(max-width:520px){ .author-box{flex-direction:column;gap:14px;} }
+
   /* Related + package link */
   .related{margin:44px 0 0;}
   .related h2{margin-bottom:18px;}
@@ -240,6 +247,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   </div>
 
   <article>
+    <div class="callout">
+      <p><strong>Это рассказ от первого лица.</strong> Автор материала сам прошёл этот путь — от первой мысли о ветряках до работы на объектах — и сегодня работает в команде FIFO Route. Цифры ниже он называет по своей практике, а не по чужим статьям.</p>
+    </div>
+
     <p>Я пришёл в ветроэнергетику не из энергетики. Я управлял магазином рабочей одежды, и у нас её покупали ребята, которые обслуживают ветрогенераторы. Разговорился с ними раз, другой — и понял, что отрасль растёт быстрее, чем успевает набирать людей, а платят там заметно выше, чем в том, чем занимался я.</p>
 
     <p>Дальше было проще, чем я ожидал. Я нашёл компанию, которая сама отправляет людей на обучение в Польшу. Закрыл сертификаты — и через две недели уже работал в Германии.</p>
@@ -362,7 +373,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
     <p>Международные подрядчики разбирают отклики через ATS — систему, которая отсеивает резюме ещё до того, как его увидит человек. Резюме в привычном постсоветском формате она просто не читает. Человек отправляет пятьдесят откликов, не получает ни одного ответа и решает, что «без опыта не берут». Хотя его резюме не дошло ни до одного рекрутера.</p>
 
-    <p>Это была самая сложная часть моего собственного пути. Именно поэтому мы начали с неё, когда делали FIFO Route.</p>
+    <p>Это была самая сложная часть моего собственного пути. Поэтому, когда я пришёл в команду FIFO Route, именно с резюме мы начинаем работу с каждым, кто к нам обращается, — до сертификатов и до визы.</p>
 
     <h2>Реальный порядок шагов</h2>
 
@@ -374,6 +385,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       <li>Выходить на подрядчиков адресно, а не веером.</li>
     </ol>
   </article>
+
+  <div class="author-box">
+    <div class="ava">FR</div>
+    <div>
+      <div class="who">Об авторе</div>
+      <p>Супервайзер с опытом работы на ветропарках. Прошёл путь с нуля: без профильного образования в энергетике, через базовое обучение GWO — до работы на объектах в Европе. Сегодня — в команде FIFO Route, где отвечает за то, чтобы специалисты выходили в отрасль подготовленными, а не наугад.</p>
+    </div>
+  </div>
 
   <div class="cta-box">
     <h2>Не знаете, с какого шага начинать?</h2>
