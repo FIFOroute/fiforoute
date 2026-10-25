@@ -1556,6 +1556,13 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     btn.textContent = "Отправляем...";
     if(errorBox) errorBox.classList.remove('show');
 
+    // Копия заявки в таблицу FIFO-quiz-leads (Google Apps Script). Письмо через Formspree уходит как раньше.
+    const LEADS_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwua20kYJYwE72XvN2L3A0wl0dAjM7q4aH9xuN0FkoT04one318p9-itaj7ftOYFLzo/exec';
+    if (LEADS_SHEET_URL) {
+      fetch(LEADS_SHEET_URL, {method: "POST", mode: "no-cors", headers: {"Content-Type": "text/plain;charset=utf-8"},
+        body: JSON.stringify({...data, page: location.pathname})}).catch(() => {});
+    }
+
     try{
       const res = await fetch("https://formspree.io/f/xkodweda", {
         method: "POST",
