@@ -1715,10 +1715,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
     // ===== LEAD MAGNET: добровольный e-mail + PDF =====
     (function(){
-      // ВСТАВЬТЕ СЮДА URL вебхука из Make.com (Custom Webhook → Copy address to clipboard).
-      // Пока строка пустая — форма работает, но письмо не отправляется:
-      // пользователь просто скачивает PDF напрямую.
-      var WEBHOOK_URL = 'https://hook.eu1.make.com/efafjpz5dskd40euls1xkao348f49u2z';
+      // Заявка пишется в таблицу через Google Apps Script (тот же адрес, что у контактной формы);
+      // письмо с PDF отправляет Growth Engine (agents/lead_notify.py) в течение ~10 минут. Make.com больше не нужен.
+      // Пустая строка — форма работает, но письмо не отправляется: пользователь просто скачивает PDF.
+      var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwua20kYJYwE72XvN2L3A0wl0dAjM7q4aH9xuN0FkoT04one318p9-itaj7ftOYFLzo/exec';
 
       var wrap = document.getElementById('lmFormWrap');
       var done = document.getElementById('lmDone');
@@ -1782,7 +1782,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         function ok(){
           if (typeof gtag === 'function') gtag('event', 'generate_lead', {method: 'quiz_lead_magnet'});
           if (typeof clarity === 'function') clarity('event', 'lead_magnet_email');
-          finish('Готово! Отправили чек-лист на ' + val + '. Если письмо не пришло за 5 минут — проверьте папку «Спам» или скачайте файл кнопкой ниже.');
+          finish('Готово! Отправили чек-лист на ' + val + '. Если письмо не пришло за 15 минут — проверьте папку «Спам» или скачайте файл кнопкой ниже.');
         }
 
         if(!WEBHOOK_URL){
@@ -1792,15 +1792,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           return;
         }
 
+        // Apps Script не отдаёт CORS-заголовки: no-cors + text/plain (ответ непрозрачный, успехом считаем доставку запроса).
         fetch(WEBHOOK_URL, {
           method: 'POST',
-          headers: {'Content-Type': 'application/json'},
+          mode: 'no-cors',
+          headers: {'Content-Type': 'text/plain;charset=utf-8'},
           body: JSON.stringify(payload)
-        }).then(function(r){
-          if(!r.ok) throw new Error('bad status');
+        }).then(function(){
           ok();
         }).catch(function(){
-          // Сеть или Make не ответили — человек всё равно получает файл.
+          // Сеть не ответила — человек всё равно получает файл.
           if (typeof gtag === 'function') gtag('event', 'lead_magnet_download', {method: 'webhook_failed'});
           finish('С отправкой письма возникла заминка, но файл доступен — скачайте его кнопкой ниже.');
         });
