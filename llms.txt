@@ -67,6 +67,8 @@
 
 - [Главная](https://fiforoute.work/): пакеты, визовый процесс, FAQ, тест подбора пакета за 1 минуту
 - [Блог](https://fiforoute.work/blog/): материалы о работе FIFO, offshore и на ветропарках
+- [165 вакансий на ветряках: что требуют в 2026](https://fiforoute.work/blog/vakansii-analiz.html): исследование FIFO Route — GWO, права, английский, визы, зарплаты в объявлениях
+- [Как проверить вакансию на вахту: 9 признаков мошенников](https://fiforoute.work/blog/kak-proverit-vakansiyu-na-vahtu.html): проверка за 10 минут и бесплатная проверка вакансии в Telegram
 - [Пример резюме для ветроэнергетики: до и после](https://fiforoute.work/blog/primer-rezume-vetroenergetika.html): разбор реального случая — шесть изменений в резюме и отбор в академию GWS
 - [Как попасть на ветряки без опыта](https://fiforoute.work/blog/kak-popast-na-vetryaki-bez-opyta.html): onshore как точка входа, модули и цены GWO, три модели оплаты обучения
 - [Сколько платят на ветряках](https://fiforoute.work/blog/skolko-platyat-na-vetryakah.html): расчёт годового дохода по ротациям 6/2, 4/1 и 2/2, влияние типа контракта
