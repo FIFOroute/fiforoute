@@ -440,6 +440,12 @@
   }
   .quiz-result h3{font-size:28px;margin-bottom:14px;}
   .quiz-result p{color:var(--slate-light);font-size:15px;margin-bottom:26px;max-width:560px;}
+  .quiz-tips{background:rgba(255,122,46,0.06);border:1px solid rgba(255,122,46,0.25);border-radius:14px;padding:18px 22px;margin:-8px 0 24px;max-width:640px;}
+  .quiz-tips-title{font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+  .quiz-tips ol{margin:0;padding-left:20px;color:var(--ice);font-size:14.5px;line-height:1.55;}
+  .quiz-tips li{margin-bottom:8px;}
+  .quiz-tips li:last-child{margin-bottom:0;}
+  .quiz-tips a{color:var(--orange);}
   .quiz-result-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
 
   /* ===== LEAD MAGNET (бесплатный PDF после теста) ===== */
@@ -979,8 +985,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         <div class="quiz-head">
           <span class="quiz-badge">⚡ Тест на 1 минуту</span>
           <h3>Какой пакет подойдёт именно вам?</h3>
-          <p>Ответьте на 4 коротких вопроса — получите персональную рекомендацию по пакету и следующий шаг.</p>
-          <div class="quiz-meta"><span id="quizStepLabel">Вопрос 1 из 4</span><span id="quizPercent">0%</span></div>
+          <p>Ответьте на 6 коротких вопросов — получите рекомендацию по пакету и 3 вещи, на которые стоит обратить внимание именно вам.</p>
+          <div class="quiz-meta"><span id="quizStepLabel">Вопрос 1 из 6</span><span id="quizPercent">0%</span></div>
           <div class="quiz-progress"><div class="quiz-progress-bar" id="quizProgressBar"></div></div>
         </div>
 
@@ -1023,12 +1029,35 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           </div>
         </div>
 
+        <div class="quiz-step" data-step="4">
+          <div class="quiz-question">Какие сертификаты у вас уже есть?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-question="certs" data-value="gwo">GWO (ветряки)</button>
+            <button class="quiz-option" data-question="certs" data-value="offshore">BOSIET / OPITO или STCW (офшор, море)</button>
+            <button class="quiz-option" data-question="certs" data-value="other">Другие допуски (высота, электробезопасность)</button>
+            <button class="quiz-option" data-question="certs" data-value="none">Пока никаких</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="5">
+          <div class="quiz-question">Готовы к вахтовому графику: недели на объекте и смены по 12 часов?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" data-question="rotation" data-value="done">Да, уже так работал(а)</button>
+            <button class="quiz-option" data-question="rotation" data-value="ready">Да, готов(а)</button>
+            <button class="quiz-option" data-question="rotation" data-value="unsure">Пока не уверен(а)</button>
+          </div>
+        </div>
+
         <button type="button" class="quiz-back" id="quizBack">← Назад</button>
 
         <div class="quiz-result" id="quizResult">
           <span class="quiz-result-tag">Рекомендуемый пакет</span>
           <h3 id="quizResultTitle"></h3>
           <p id="quizResultText"></p>
+          <div class="quiz-tips" id="quizTips">
+            <div class="quiz-tips-title">3 вещи, на которые стоит обратить внимание</div>
+            <ol id="quizTipsList"></ol>
+          </div>
           <div class="quiz-result-actions">
             <a href="#contact" class="btn btn-primary" id="quizCtaContact">Выбрать этот пакет</a>
             <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener" class="btn btn-ghost">Обсудить с менеджером в Telegram</a>
@@ -1706,6 +1735,22 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       window.__fifoQuizAnswers = JSON.parse(JSON.stringify(answers));
       resultTitle.textContent = title;
       resultText.textContent = text;
+
+      // 3 svarīgākās lietas pēc atbildēm (prioritātes secībā)
+      const tips = [];
+      if(answers.passport === 'none' || answers.passport === 'planning') tips.push('<strong>Загранпаспорт.</strong> Оформите его заранее: без него не начнётся ни один визовый процесс.');
+      if(answers.passport === 'valid_soon') tips.push('<strong>Срок паспорта.</strong> Продлите его заранее: для визы паспорт обычно должен действовать весь срок контракта и ещё с запасом.');
+      if(answers.specialty === 'none') tips.push('<strong>Профессия.</strong> На вахте ищут техников, механиков, электриков, сварщиков. Начните с разбора, какая специальность ближе к вашему опыту.');
+      if(answers.english === 'none' || answers.english === 'basic') tips.push('<strong>Английский.</strong> Подтяните рабочий уровень: технические слова и простые фразы для собеседования и инструктажа по безопасности.');
+      if(answers.certs === 'none') tips.push('<strong>Сертификаты.</strong> Для ветряков обычно нужен GWO BST (4 модуля, в Польше или Прибалтике ориентировочно 500–770 €), для офшора — морские курсы безопасности.');
+      if(answers.certs === 'gwo') tips.push('<strong>Срок GWO.</strong> Сертификаты действуют 2 года. Укажите в резюме модули и даты — работодатель смотрит именно на это.');
+      if(answers.experience === 'none') tips.push('<strong>Опыт.</strong> На ветряки проще зайти через onshore (на суше): ниже порог входа и не нужен Sea Survival.');
+      if(answers.rotation === 'unsure') tips.push('<strong>График.</strong> Недели вдали от дома и смены по 12 часов подходят не всем. Честно оцените это до первых откликов.');
+      tips.push('<strong>Резюме.</strong> На английском, в простом формате и со словами из вакансии — иначе фильтр ATS часто не пропускает его к рекрутеру. Есть резюме и конкретная вакансия? <a href="/pakety/audit/">Аудит под вакансию — $39</a>.');
+      tips.push('<strong>Вакансии.</strong> Проверяйте их до отклика: деньги до контракта и «гарантия визы» — признаки мошенников. <a href="/blog/kak-proverit-vakansiyu-na-vahtu.html">Как проверить за 10 минут</a>.');
+      tips.push('<strong>Визовый маршрут.</strong> Сначала поймите, куда реально можно с вашим гражданством, и только потом откликайтесь.');
+      const tipsList = document.getElementById('quizTipsList');
+      if(tipsList) tipsList.innerHTML = tips.slice(0, 3).map(t => '<li>' + t + '</li>').join('');
       ctaContact.onclick = function(){
         if(packageSelect){
           const options = Array.from(packageSelect.options).map(o => o.textContent);
