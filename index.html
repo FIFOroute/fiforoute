@@ -618,22 +618,52 @@
   .process-card h4{font-size:15.5px;margin-bottom:8px;font-weight:700;text-transform:none;font-family:'Manrope',sans-serif;}
   .process-card p{font-size:13px;color:var(--slate-light);}
 
-  /* ===== TESTIMONIALS ===== */
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .testi-card{
-    background:var(--navy-soft);border:1px solid var(--line);border-radius:var(--radius);padding:30px;
-    transition:transform .2s,border-color .2s;
+  /* ===== TESTIMONIALS (karuselis, 12.11) ===== */
+  .rv-trust{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:-18px auto 34px;
+    font-size:14.5px;color:var(--slate-light);text-align:center;max-width:760px;}
+  .rv-trust b{color:var(--ice);}
+  .rv-stars{display:flex;gap:3px;}
+  .rv-stars svg{width:16px;height:16px;fill:#ffb547;filter:drop-shadow(0 0 4px rgba(255,170,60,.55));}
+  .rv-stars-lg svg{width:20px;height:20px;}
+  .rv-carousel{position:relative;}
+  .rv-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+    padding:6px 2px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch;outline:none;}
+  .rv-track::-webkit-scrollbar{display:none;}
+  .rv-card{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start;display:flex;flex-direction:column;
+    background:linear-gradient(160deg,var(--navy-soft),var(--navy));border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;transition:border-color .2s,transform .2s;}
+  .rv-card:hover{border-color:rgba(255,122,46,.4);transform:translateY(-3px);}
+  .rv-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px;}
+  .rv-badge{font-size:11.5px;font-weight:700;color:var(--green);border:1px solid rgba(43,217,163,.35);
+    background:rgba(43,217,163,.08);border-radius:999px;padding:4px 10px;white-space:nowrap;}
+  .rv-badge-soft{color:var(--slate-light);border-color:var(--line-strong);background:transparent;}
+  .rv-quote{font-size:15px;color:var(--ice);line-height:1.6;margin:0 0 14px;}
+  .rv-result{font-size:13.5px;color:var(--slate-light);line-height:1.55;margin:0 0 18px;}
+  .rv-result b{color:var(--orange);font-weight:700;}
+  .rv-person{display:flex;align-items:center;gap:12px;margin-top:auto;}
+  .rv-avatar{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,#ff7a2e,#e2611a);
+    display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;color:#10131a;font-size:15px;}
+  .rv-name{font-size:14px;font-weight:700;color:var(--ice);}
+  .rv-role{font-size:12.5px;color:var(--slate-light);}
+  .rv-pkg{align-self:flex-start;margin-top:14px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.06em;
+    font-size:11px;color:var(--orange);}
+  .rv-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;z-index:2;
+    background:rgba(11,22,34,.92);border:1px solid var(--line-strong);color:var(--ice);font-size:26px;line-height:1;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .15s,color .15s,opacity .15s;}
+  .rv-nav:hover{border-color:var(--orange);color:var(--orange);}
+  .rv-nav:disabled{opacity:.3;cursor:default;}
+  .rv-prev{left:-22px;} .rv-next{right:-22px;}
+  .rv-dots{display:flex;justify-content:center;gap:8px;margin-top:22px;}
+  .rv-dots button{width:8px;height:8px;border-radius:999px;background:var(--line-strong);border:0;padding:0;cursor:pointer;
+    transition:width .2s,background .2s;}
+  .rv-dots button[aria-selected="true"]{width:24px;background:var(--orange);}
+  @media(max-width:1024px){ .rv-card{flex-basis:calc((100% - 22px)/2);} .rv-prev{left:-8px;} .rv-next{right:-8px;} }
+  @media(max-width:760px){
+    .rv-card{flex-basis:86%;scroll-snap-align:center;}
+    .rv-nav{display:none;}
+    .rv-trust{margin-top:-10px;font-size:13.5px;}
   }
-  .testi-card:hover{transform:translateY(-4px);border-color:var(--line-strong);}
-  .testi-stars{color:var(--orange);font-size:14px;margin-bottom:16px;letter-spacing:2px;}
-  .testi-card p{font-size:14.5px;color:var(--ice);margin-bottom:22px;}
-  .testi-person{display:flex;align-items:center;gap:12px;}
-  .testi-avatar{
-    width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--green));
-    display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;color:#10131a;font-size:15px;
-  }
-  .testi-name{font-size:14px;font-weight:700;}
-  .testi-role{font-size:12.5px;color:var(--slate-light);}
+  @media (prefers-reduced-motion: reduce){ .rv-track{scroll-behavior:auto;} .rv-card:hover{transform:none;} }
 
   /* ===== FAQ ===== */
   /* Blog / Полезные материалы */
@@ -1291,23 +1321,127 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         <span class="eyebrow">Отзывы</span>
         <h2>Что говорят клиенты</h2>
       </div>
-      <div class="testi-grid">
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p>«Был уверен, что с моими документами визу не дадут. Менеджер нашёл маршрут, о котором я даже не знал. Через 2 месяца уже летел на объект.»</p>
-          <div class="testi-person"><div class="testi-avatar">ДК</div><div><div class="testi-name">Дмитрий К.</div><div class="testi-role">Электромонтёр, Красноярск</div></div></div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p>«Полгода рассылал резюме без ответа. Оказалось, оно просто не проходило автоматический отбор. После переделки — три приглашения за месяц.»</p>
-          <div class="testi-person"><div class="testi-avatar">АС</div><div><div class="testi-name">Андрей С.</div><div class="testi-role">Механик, Тюмень</div></div></div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p>«Взял VIP-пакет — и не зря. Куратор сам напоминал о сроках, проверял каждый документ. Я просто следовал плану.»</p>
-          <div class="testi-person"><div class="testi-avatar">МП</div><div><div class="testi-name">Максим П.</div><div class="testi-role">Сварщик, Уфа</div></div></div>
-        </div>
+      <div class="rv-trust reveal">
+        <div class="rv-stars rv-stars-lg" aria-hidden="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div>
+        <span><b>4.9 / 5.0</b> — средняя оценка клиентов · истории публикуются с согласия клиентов, имена сокращены</span>
       </div>
+      <div class="rv-carousel" data-rv>
+        <button class="rv-nav rv-prev" type="button" aria-label="Предыдущие отзывы">‹</button>
+        <div class="rv-track" tabindex="0" aria-label="Отзывы клиентов — листайте">
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge">✓ С согласия клиента</span></div>
+          <blockquote class="rv-quote">«Я думал, казахов туда просто не берут. Оказалось — моё резюме даже не открывал человек.»</blockquote>
+          <p class="rv-result"><b>Результат:</b> Полгода без ответов. После переделки резюме под ATS — первый контракт на судне-установщике ветряков через 34 дня.</p>
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">ЕМ</div>
+            <div><div class="rv-name">Ерлан М.</div><div class="rv-role">Промышленный механик • Караганда → Дания</div></div>
+          </div>
+          <span class="rv-pkg">Пакет «Карьерный билдер»</span>
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge">✓ С согласия клиента</span></div>
+          <blockquote class="rv-quote">«В 48 лет начинать с нуля в море? Мне все крутили пальцем у виска.»</blockquote>
+          <p class="rv-result"><b>Результат:</b> Без офшорного опыта и со школьным английским — контракт на сервисные ротации в Северном море через 51 день.</p>
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">М</div>
+            <div><div class="rv-name">Михаил, 48 лет (имя изменено)</div><div class="rv-role">Электромеханик высокого напряжения • Норвегия, офшор</div></div>
+          </div>
+          <span class="rv-pkg">Пакет «Акселератор»</span>
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge">✓ С согласия клиента</span></div>
+          <blockquote class="rv-quote">«Оффер на руках был, а толку? Консульство давало запись только на осень, когда сезон уже закончится.»</blockquote>
+          <p class="rv-result"><b>Результат:</b> Вышел на первый объект в Балтийском море через 43 дня после первого звонка.</p>
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">АВ</div>
+            <div><div class="rv-name">Алексей В.</div><div class="rv-role">Промальпинист, ремонт лопастей • Германия</div></div>
+          </div>
+          <span class="rv-pkg">Пакет «VIP под ключ»</span>
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge">✓ С согласия клиента</span></div>
+          <blockquote class="rv-quote">«Все говорят про морские вышки, но никто не объясняет новичкам: самый лёгкий вход в отрасль — это суша.»</blockquote>
+          <p class="rv-result"><b>Результат:</b> Без опыта в энергетике — помощник монтажника на ветропарке на севере Швеции через 28 дней.</p>
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">ТК</div>
+            <div><div class="rv-name">Тимур К., 24 года</div><div class="rv-role">Начинающий техник • Швеция, onshore</div></div>
+          </div>
+          <span class="rv-pkg">Пакет «Карьерный билдер»</span>
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge">✓ С согласия клиента</span></div>
+          <blockquote class="rv-quote">«Рекрутер задал вопрос, а у меня в голове белый шум. Я просто положил трубку от стыда.»</blockquote>
+          <p class="rv-result"><b>Результат:</b> Три проваленных видеособеседования. После подготовки — оффер на следующий день после интервью.</p>
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">БТ</div>
+            <div><div class="rv-name">Бакыт Т., 31 год</div><div class="rv-role">Техник ветрогенераторов • Германия, onshore</div></div>
+          </div>
+          <span class="rv-pkg">Пакет «Акселератор»</span>
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge">✓ С согласия клиента</span></div>
+          <blockquote class="rv-quote">«Я потратил $1800 на «международные» корки, а в Европе мне сказали: «Можете повесить их в рамку на стену».»</blockquote>
+          <p class="rv-result"><b>Результат:</b> Разобрались, какие сертификаты признают на самом деле, — через 41 день сервисные работы на верфи по прямому контракту.</p>
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">Ф</div>
+            <div><div class="rv-name">Фарход</div><div class="rv-role">Маляр-пескоструйщик • Нидерланды, Роттердам</div></div>
+          </div>
+          <span class="rv-pkg">Пакет «Карьерный билдер»</span>
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge">✓ С согласия клиента</span></div>
+          <blockquote class="rv-quote">«Они забирали почти половину моей зарплаты каждый месяц. И говорили: «Рыпнешься — аннулируем визу».»</blockquote>
+          <p class="rv-result"><b>Результат:</b> Через 38 дней — прямой контракт с генподрядчиком на том же объекте, без посредника.</p>
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">С</div>
+            <div><div class="rv-name">Сварщик, 36 лет</div><div class="rv-role">Сварка трубопроводов TIG/MIG, 6G • Атырау → Норвегия</div></div>
+          </div>
+          <span class="rv-pkg">Пакет «VIP под ключ»</span>
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge">✓ С согласия клиента</span></div>
+          <blockquote class="rv-quote">«В отделе кадров мне сказали: вам 52, куда вы лезете? Дайте дорогу молодым.»</blockquote>
+          <p class="rv-result"><b>Результат:</b> После 50 предлагали только работу сторожа. Через 47 дней — ротация на судне обеспечения в Персидском заливе.</p>
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">СН</div>
+            <div><div class="rv-name">Сергей Николаевич, 52 года</div><div class="rv-role">Электромеханик дизельных двигателей • ОАЭ, судно обеспечения</div></div>
+          </div>
+          <span class="rv-pkg">Пакет «Карьерный билдер»</span>
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge rv-badge-soft">✓ Клиент FIFO Route</span></div>
+          <blockquote class="rv-quote">«Был уверен, что с моими документами визу не дадут. Менеджер нашёл маршрут, о котором я даже не знал. Через 2 месяца уже летел на объект.»</blockquote>
+          
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">ДК</div>
+            <div><div class="rv-name">Дмитрий К.</div><div class="rv-role">Электромонтёр • Красноярск</div></div>
+          </div>
+          
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge rv-badge-soft">✓ Клиент FIFO Route</span></div>
+          <blockquote class="rv-quote">«Полгода рассылал резюме без ответа. Оказалось, оно просто не проходило автоматический отбор. После переделки — три приглашения за месяц.»</blockquote>
+          
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">АС</div>
+            <div><div class="rv-name">Андрей С.</div><div class="rv-role">Механик • Тюмень</div></div>
+          </div>
+          
+        </article>
+        <article class="rv-card" aria-roledescription="отзыв">
+          <div class="rv-top"><div class="rv-stars" aria-label="Оценка 5 из 5"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg></div><span class="rv-badge rv-badge-soft">✓ Клиент FIFO Route</span></div>
+          <blockquote class="rv-quote">«Взял VIP-пакет — и не зря. Куратор сам напоминал о сроках, проверял каждый документ. Я просто следовал плану.»</blockquote>
+          
+          <div class="rv-person">
+            <div class="rv-avatar" aria-hidden="true">МП</div>
+            <div><div class="rv-name">Максим П.</div><div class="rv-role">Сварщик • Уфа</div></div>
+          </div>
+          
+        </article>
+        </div>
+        <button class="rv-nav rv-next" type="button" aria-label="Следующие отзывы">›</button>
+      </div>
+      <div class="rv-dots" role="tablist" aria-label="Страницы отзывов"></div>
     </div>
   </section>
 
@@ -1918,6 +2052,46 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 });
+</script>
+<script>
+// Atsauksmju karuselis: bultiņas, punktiņi, swipe (CSS scroll-snap)
+(function(){
+  document.querySelectorAll('[data-rv]').forEach(function(box){
+    var track = box.querySelector('.rv-track'), prev = box.querySelector('.rv-prev'), next = box.querySelector('.rv-next');
+    var dots = box.parentNode.querySelector('.rv-dots'), cards = track.querySelectorAll('.rv-card');
+    function step(){ return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth; }
+    function perView(){ return Math.max(1, Math.round(track.clientWidth / step())); }
+    function pages(){ return Math.max(1, Math.ceil((cards.length - perView()) / perView()) + 1); }
+    function current(){ var max = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= max - 4) return pages() - 1;
+      return Math.round(track.scrollLeft / (step() * perView())); }
+    function go(i){ var max = track.scrollWidth - track.clientWidth;
+      i = Math.max(0, Math.min(pages() - 1, i));
+      var left = Math.min(max, i * step() * perView()), from = track.scrollLeft;
+      track.scrollTo({left: left});
+      // ja pārlūks neatbalsta plūdeno ritināšanu — pārlecam uzreiz
+      setTimeout(function(){ if (Math.abs(track.scrollLeft - from) < 2 && Math.abs(left - from) > 2) {
+        track.style.scrollBehavior = 'auto'; track.scrollLeft = left; track.style.scrollBehavior = ''; }
+        sync(); }, 450); }
+    function sync(){ var c = current(), max = track.scrollWidth - track.clientWidth;
+      Array.prototype.forEach.call(dots.children, function(d, i){ d.setAttribute('aria-selected', i === c ? 'true' : 'false'); });
+      if (prev) prev.disabled = track.scrollLeft <= 4;
+      if (next) next.disabled = track.scrollLeft >= max - 4; }
+    function build(){ dots.innerHTML = '';
+      for (var i = 0; i < pages(); i++) { var b = document.createElement('button');
+        b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-label', 'Страница ' + (i + 1));
+        b.addEventListener('click', go.bind(null, i)); dots.appendChild(b); }
+      sync(); }
+    if (prev) prev.addEventListener('click', function(){ go(current() - 1); });
+    if (next) next.addEventListener('click', function(){ go(current() + 1); });
+    track.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(current() + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(current() - 1); } });
+    var t; track.addEventListener('scroll', function(){ clearTimeout(t); t = setTimeout(sync, 60); }, {passive: true});
+    var r; window.addEventListener('resize', function(){ clearTimeout(r); r = setTimeout(build, 150); });
+    build();
+  });
+})();
 </script>
 </body>
 </html>
