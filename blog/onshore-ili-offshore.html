@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onshore или offshore на ветряках: сравнение 2026 | FIFO Route</title>
+<meta name="description" content="Onshore или offshore на ветряках: сравнение ставок, графиков, ротаций, сертификатов GWO и порога входа. С чего начинать новичку и когда переходить в море.">
+<link rel="canonical" href="https://fiforoute.work/blog/onshore-ili-offshore.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Onshore или offshore: что выбрать на ветряках">
+<meta property="og:description" content="Ставки, графики, сертификаты и порог входа на суше и в море — и почему новичку лучше начинать с onshore.">
+<meta property="og:url" content="https://fiforoute.work/blog/onshore-ili-offshore.html">
+<meta property="og:image" content="https://fiforoute.work/assets/og-banner.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="FIFO Route">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="../assets/FR.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0b1622">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy-deep:#0b1622; --navy:#101e2e; --navy-soft:#16283c;
+    --slate:#5c7187; --slate-light:#9fb0c2; --ice:#eef3f8;
+    --orange:#ff7a2e; --orange-deep:#e2611a; --green:#2bd9a3;
+    --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Manrope',sans-serif;background:var(--navy-deep);color:var(--ice);
+    line-height:1.7;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(ellipse at 80% -5%, rgba(255,122,46,0.10), transparent 55%);
+  }
+  a{color:var(--orange);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  header{position:sticky;top:0;z-index:50;background:rgba(11,22,34,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Oswald',sans-serif;font-weight:700;font-size:21px;letter-spacing:0.02em;color:var(--ice);flex-shrink:0;}
+  .logo:hover{text-decoration:none;}
+  .logo span.accent{color:var(--orange);}
+  .logo .mark{width:38px;height:38px;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(255,122,46,0.35));}
+  .nav .back{font-family:'Manrope';font-size:14px;color:var(--slate-light);font-weight:600;}
+  main{max-width:760px;margin:0 auto;padding:56px 24px 40px;}
+  .eyebrow{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.14em;font-size:13px;color:var(--orange);font-weight:600;margin-bottom:18px;}
+  h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(30px,6vw,46px);line-height:1.12;text-transform:uppercase;margin-bottom:20px;}
+  .lead{font-size:19px;color:var(--slate-light);margin-bottom:14px;}
+  .meta{font-size:13.5px;color:var(--slate);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:28px 0 40px;display:flex;gap:18px;flex-wrap:wrap;}
+  .meta span{display:flex;align-items:center;gap:7px;}
+  article h2{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:26px;letter-spacing:0.01em;margin:44px 0 16px;padding-top:8px;}
+  article h3{font-family:'Manrope';font-weight:700;font-size:19px;margin:28px 0 10px;color:var(--ice);}
+  article p{margin-bottom:18px;font-size:17px;color:#d7e0ea;}
+  article ul{margin:0 0 20px 0;padding-left:0;list-style:none;}
+  article ul li{position:relative;padding-left:28px;margin-bottom:11px;font-size:17px;color:#d7e0ea;}
+  article ul li::before{content:"";position:absolute;left:2px;top:11px;width:8px;height:8px;border-radius:50%;background:var(--orange);}
+  article strong{color:var(--ice);}
+  .callout{background:linear-gradient(160deg,var(--navy-soft),var(--navy));border:1px solid var(--line-strong);border-left:3px solid var(--orange);border-radius:12px;padding:22px 24px;margin:30px 0;}
+  .callout p{margin:0;font-size:16px;color:var(--slate-light);}
+  .callout p strong{color:var(--ice);}
+  .stat-row{display:flex;gap:16px;flex-wrap:wrap;margin:30px 0;}
+  .stat{flex:1;min-width:160px;background:linear-gradient(160deg,var(--navy-soft),var(--navy));border:1px solid var(--line);border-radius:14px;padding:22px 20px;}
+  .stat .num{font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:var(--orange);line-height:1;}
+  .stat .lbl{font-size:14px;color:var(--slate-light);margin-top:8px;}
+  .table-wrap{overflow-x:auto;margin:26px 0;border:1px solid var(--line);border-radius:12px;}
+  table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:440px;}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);}
+  th{font-family:'Oswald';text-transform:uppercase;font-size:13px;letter-spacing:0.05em;color:var(--orange);font-weight:600;}
+  td{color:#d7e0ea;}
+  tr:last-child td{border-bottom:none;}
+  .cta-box{background:linear-gradient(150deg,rgba(255,122,46,0.14),rgba(255,122,46,0.03));border:1px solid rgba(255,122,46,0.32);border-radius:18px;padding:34px 30px;margin:46px 0 20px;text-align:center;}
+  .cta-box h2{margin:0 0 12px;font-size:26px;}
+  .cta-box p{color:var(--slate-light);font-size:16px;margin-bottom:24px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:10px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#10131a;font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;box-shadow:0 10px 30px -8px rgba(255,122,46,0.5);transition:transform .15s;}
+  .btn:hover{transform:translateY(-2px);text-decoration:none;}
+  /* Author box */
+  .author-box{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:24px 26px;border:1px solid var(--line);border-left:3px solid var(--orange);border-radius:14px;background:var(--navy-soft);}
+  .author-box .ava{flex:0 0 52px;width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:20px;color:#10131a;}
+  .author-box .who{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.06em;font-size:14px;color:var(--ice);margin-bottom:8px;}
+  .author-box p{margin:0;font-size:15px;color:var(--slate-light);line-height:1.6;}
+  @media(max-width:520px){ .author-box{flex-direction:column;gap:14px;} }
+
+  /* Related + package link */
+  .related{margin:44px 0 0;}
+  .related h2{margin-bottom:18px;}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+  .related-grid a{display:block;border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--navy-soft);color:var(--ice);font-weight:600;font-size:15.5px;line-height:1.45;transition:border-color .18s, transform .18s;}
+  .related-grid a:hover{border-color:rgba(255,122,46,0.45);transform:translateY(-2px);text-decoration:none;}
+  .related-grid a span{display:block;margin-top:7px;font-size:13.5px;color:var(--slate-light);font-weight:400;}
+  .pkg-note{margin-top:18px;font-size:15px;color:var(--slate-light);}
+  .btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:10px;border:1px solid rgba(255,122,46,0.45);color:var(--orange);font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;margin-left:10px;transition:background .15s;}
+  .btn-ghost:hover{background:rgba(255,122,46,0.10);text-decoration:none;}
+  @media(max-width:520px){ .btn-ghost{margin:12px 0 0;} .cta-box .btn, .cta-box .btn-ghost{width:100%;} }
+
+  /* Kratko / TL;DR */
+  .tldr{margin:28px 0 34px;padding:22px 24px;border:1px solid rgba(43,217,163,0.28);border-left:3px solid var(--green);border-radius:14px;background:linear-gradient(160deg,rgba(43,217,163,0.07),rgba(43,217,163,0.02));}
+  .tldr h2{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.08em;font-size:15px;color:var(--green);margin:0 0 12px;}
+  .tldr ul{margin:0;padding-left:20px;}
+  .tldr li{font-size:15.5px;color:var(--ice);line-height:1.55;margin-bottom:7px;}
+  .tldr li:last-child{margin-bottom:0;}
+
+  .faq{margin:44px 0 0;}
+  .faq h2{margin-bottom:20px;}
+  .faq-item{border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;background:var(--navy-soft);}
+  .faq-item h3{margin:0 0 8px;font-size:17px;color:var(--ice);}
+  .faq-item p{margin:0;font-size:15.5px;color:var(--slate-light);}
+  footer{border-top:1px solid var(--line);margin-top:40px;}
+  .foot-inner{max-width:760px;margin:0 auto;padding:34px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--slate);}
+  .foot-inner a{color:var(--slate-light);}
+  .disclaimer{font-size:13.5px;color:var(--slate);font-style:italic;margin-top:36px;padding-top:22px;border-top:1px solid var(--line);}
+  @media(max-width:560px){
+    main{padding:38px 20px 30px;}
+    article p, article ul li{font-size:16px;}
+  }
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0;}
+  .compare .col{border:1px solid var(--line);border-radius:12px;padding:20px;}
+  .compare .bad{border-left:3px solid #ff5a5a;}
+  .compare .good{border-left:3px solid var(--green);}
+  .compare h4{font-family:'Oswald';text-transform:uppercase;font-size:14px;letter-spacing:0.05em;margin-bottom:12px;}
+  .compare .bad h4{color:#ff8a8a;}
+  .compare .good h4{color:var(--green);}
+  .compare ul{margin:0;}
+  .compare ul li{font-size:14.5px;margin-bottom:8px;padding-left:22px;}
+  .compare ul li::before{width:6px;height:6px;top:9px;}
+    .compare{grid-template-columns:1fr;}
+.table-note{font-size:13.5px !important;color:var(--slate) !important;margin-bottom:22px !important;}
+</style>
+<script src="/assets/cookie-consent.js"></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HNY3HQFENK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HNY3HQFENK');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xu5r0anx2y");
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Onshore или offshore: что выбрать на ветряках",
+  "description": "Onshore или offshore на ветряках: сравнение ставок, графиков, ротаций, сертификатов GWO и порога входа. С чего начинать новичку и когда переходить в море.",
+  "image": [
+    "https://fiforoute.work/assets/og-square.jpg",
+    "https://fiforoute.work/assets/og-banner.jpg"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "FIFO Route",
+    "@id": "https://fiforoute.work/#organization"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "FIFO Route",
+    "@id": "https://fiforoute.work/#organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fiforoute.work/assets/Logo_FR.png"
+    }
+  },
+  "datePublished": "2026-11-11",
+  "dateModified": "2026-11-11",
+  "inLanguage": "ru-RU",
+  "isPartOf": {
+    "@id": "https://fiforoute.work/blog/#blog"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://fiforoute.work/blog/onshore-ili-offshore.html"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Onshore wind"
+    },
+    {
+      "@type": "Thing",
+      "name": "Offshore wind"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Что лучше для новичка — onshore или offshore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Обычно onshore: ниже порог входа, дешевле обучение (4 модуля GWO без Sea Survival) и работодатели чаще берут людей из смежных профессий. Через 1–2 года опыта на суше открывается offshore. Исключение — у кого уже есть морской опыт."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Где больше платят — на суше или в море?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "На входе в offshore ставка как правило выше: от 4 500 € в месяц против от 20 € в час плюс суточные на суше. Но годовой доход сильнее зависит от ротации и типа контракта, чем от ставки."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой график на onshore и offshore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "На суше обычно 6 недель через 2 или 4 через 1, неделя 6 дней по 8–10 часов. В море — как правило 2 недели через 2, 7 дней в неделю по 10–12 часов; погода может сдвинуть вахту."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие сертификаты нужны для offshore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Базовый GWO Basic Safety Training плюс модуль Sea Survival и офшорная медкомиссия по стандарту региона. Для onshore достаточно 4 базовых модулей GWO."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://fiforoute.work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "https://fiforoute.work/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Onshore или offshore: что выбрать на ветряках",
+      "item": "https://fiforoute.work/blog/onshore-ili-offshore.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a href="/" class="logo" aria-label="FIFO Route — на главную"><svg class="mark" viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="fr-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff7a2e"/><stop offset="100%" stop-color="#e2611a"/></linearGradient></defs><rect width="512" height="512" rx="105" fill="url(#fr-g)"/><text x="50%" y="55%" font-family="'Oswald','Arial Black',sans-serif" font-size="210" font-weight="800" fill="#0b1622" dominant-baseline="middle" text-anchor="middle" letter-spacing="-5">FR</text></svg>FIFO<span class="accent">Route</span></a>
+    <a href="/blog/" class="back">← Все статьи блога</a>
+  </div>
+</header>
+<main>
+  <div class="eyebrow">Сравнение · ветряки</div>
+  <h1>Onshore или offshore: что выбрать на ветряках</h1>
+  <p class="lead">Ветряки на суше (onshore) и в море (offshore) — это одна отрасль, но две очень разные жизни: другой график, другие деньги, другие сертификаты и другой порог входа. Сравниваем по пунктам и разбираем, кому что подходит.</p>
+  <div class="meta">
+    <span>🗓 11 ноября 2026</span>
+    <span>⏱ Чтение 5 минут</span>
+    <span>✈️ FIFO Route</span>
+  </div>
+  <div class="tldr">
+    <h2>Коротко</h2>
+    <ul>
+      <li><strong>Onshore</strong>: на входе обычно от 20 € в час плюс суточные от 35 €, неделя 6 дней по 8–10 часов, ротации 6/2 или 4/1 недели.</li>
+      <li><strong>Offshore</strong>: на входе как правило от 4 500 € в месяц, 7 дней в неделю по 10–12 часов, ротация обычно 2/2 недели, жильё на судне.</li>
+      <li>Для offshore к базовому GWO добавляется модуль <strong>Sea Survival</strong> и нужна офшорная медкомиссия.</li>
+      <li>Новичку проще начинать с <strong>onshore</strong>: ниже порог входа, больше вакансий для старта. Через год-два опыта открывается море.</li>
+      <li>Ставка — не всё: годовой доход сильнее зависит от ротации и типа контракта.</li>
+    </ul>
+  </div>
+  <article>
+    <h2>Сравнение по пунктам</h2>
+    <div class="table-wrap">
+      <table>
+        <tr><th></th><th>Onshore (суша)</th><th>Offshore (море)</th></tr>
+        <tr><td>Ставка на входе</td><td>от 20 € в час + суточные от 35 €</td><td>от 4 500 € в месяц</td></tr>
+        <tr><td>Рабочая неделя</td><td>6 дней, смена 8–10 часов</td><td>7 дней, смена 10–12 часов</td></tr>
+        <tr><td>Ротация</td><td>6 недель через 2 или 4 через 1</td><td>обычно 2 недели через 2</td></tr>
+        <tr><td>Где живёте</td><td>жильё рядом с ветропарком</td><td>на судне, реже — доставка на берег каждый день</td></tr>
+        <tr><td>Как добираетесь до турбины</td><td>сами на служебной машине</td><td>на судне, иногда вертолётом</td></tr>
+        <tr><td>Сертификат GWO BST</td><td>4 модуля</td><td>4 модуля + Sea Survival</td></tr>
+        <tr><td>Стоимость GWO (Польша, Прибалтика)</td><td>примерно 500–600 €</td><td>примерно 600–770 €</td></tr>
+        <tr><td>Медкомиссия</td><td>обычная</td><td>офшорная, по стандарту региона</td></tr>
+        <tr><td>Водительские права</td><td>часто нужны</td><td>обычно не нужны</td></tr>
+        <tr><td>Порог входа</td><td>ниже</td><td>выше</td></tr>
+      </table>
+    </div>
+    <p class="table-note">Ориентиры FIFO Route на осень 2026 года. Конкретную ставку и условия называет работодатель в вакансии; они различаются по странам, компаниям и контрактам.</p>
+
+    <h2>Onshore: плюсы и минусы</h2>
+    <p>Работа на суше — это ветропарки на полях, холмах и побережье. Вы живёте рядом с объектом, работаете 6 дней в неделю и сами ездите между турбинами.</p>
+    <ul>
+      <li><strong>Плюсы:</strong> ниже порог входа, дешевле обучение, больше вакансий для новичков, легче совмещать с жизнью — можно чаще бывать на связи и в городе.</li>
+      <li><strong>Минусы:</strong> длинные ротации (6 недель на объекте), часто нужны права, работа в любую погоду на открытой площадке.</li>
+    </ul>
+
+    <h2>Offshore: плюсы и минусы</h2>
+    <p>Морские ветропарки стоят в Северном, Балтийском и Ирландском морях. Вы живёте на специальном судне или платформе и работаете каждый день без выходных — зато потом столько же дней дома.</p>
+    <ul>
+      <li><strong>Плюсы:</strong> выше заработок, ротация 2/2 — половина года дома, проживание и питание на судне.</li>
+      <li><strong>Минусы:</strong> выше порог входа, нужен Sea Survival и офшорная медкомиссия, качка и морская болезнь, смены по 10–12 часов без выходных. Погода может сдвинуть вахту на неделю в любую сторону.</li>
+    </ul>
+    <p>Как оплачиваются дни, когда из-за шторма работы нет, зависит от контракта — это стоит выяснить до подписания.</p>
+
+    <h2>Почему новичку лучше начинать с суши</h2>
+    <p>Офшорные компании предпочитают кандидатов, у которых уже есть опыт на турбинах: в море ошибка дороже, а заменить человека сложнее. На суше работодатели чаще берут людей из смежных профессий — механиков, электриков, сварщиков, монтажников — и учат на месте.</p>
+    <p>Типичный путь: 1–2 года на onshore, дополнительные сертификаты (часто за счёт работодателя), затем переход в offshore с опытом, который уже видно в резюме. Подробно — в статье <a href="kak-popast-na-vetryaki-bez-opyta.html">как попасть на ветряки без опыта</a>.</p>
+    <div class="callout">
+      <p><strong>Исключение.</strong> Если у вас уже есть морской опыт — судовой механик, моторист, работа на платформах, — сразу в offshore пойти реальнее. Такой опыт стоит вынести в начало резюме.</p>
+    </div>
+
+    <h2>Что важнее ставки: ротация и контракт</h2>
+    <p>Сравнивать onshore и offshore по ставке в час или в месяц не совсем честно. Годовой доход зависит от того, сколько недель в году вы реально работаете, и от типа контракта: месячный оклад в штате или оплата только за отработанные вахты. При одной и той же ставке разница за год может быть двукратной.</p>
+    <p>Мы посчитали годовой доход по ротациям 6/2, 4/1 и 2/2 в статье <a href="skolko-platyat-na-vetryakah.html">сколько реально платят на ветряках</a>.</p>
+
+    <h2>Как выбрать: короткий тест для себя</h2>
+    <ul>
+      <li>Нет опыта на турбинах и нет морского опыта → <strong>onshore</strong>.</li>
+      <li>Есть права и вы готовы к длинным вахтам → <strong>onshore</strong>.</li>
+      <li>Есть опыт на турбинах или в море, хорошо переносите качку → <strong>offshore</strong>.</li>
+      <li>Важно проводить половину года дома одним блоком → <strong>offshore</strong> (2/2), но путь туда обычно через onshore.</li>
+    </ul>
+    <p>В любом случае первым документом будет сертификат GWO — подробно <a href="sertifikat-gwo.html">про модули, цену и срок действия</a>. А если вы ещё выбираете страну, посмотрите разбор <a href="vetryaki-v-germanii.html">работы на ветряках в Германии</a>.</p>
+  </article>
+
+  <div class="author-box">
+    <div class="ava">FR</div>
+    <div>
+      <div class="who">Об авторе</div>
+      <p>Супервайзер с опытом работы на ветропарках. Прошёл путь с нуля: без профильного образования в энергетике, через базовое обучение GWO — до работы на объектах в Европе. Сегодня — в команде FIFO Route, где отвечает за то, чтобы цифры и требования в материалах совпадали с тем, что реально происходит на объектах.</p>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h2>Onshore или offshore — что реально для вас?</h2>
+    <p>Тест из 6 вопросов за 1 минуту покажет, с чего начать именно вам, и даст 3 персональных совета. Без ввода почты и телефона.</p>
+    <a href="/?utm_source=blog&amp;utm_medium=onshore_offshore#quiz" class="btn">Пройти тест →</a>
+    <a href="/pakety/audit/?utm_source=blog&amp;utm_medium=onshore_offshore" class="btn-ghost">Аудит резюме — $39 →</a>
+    <p class="pkg-note">Аудит — разбор вашего резюме под конкретную вакансию по 12 критериям, PDF-отчёт за 2 рабочих дня. Если потом закажете пакет, $39 вычтем из цены.</p>
+  </div>
+
+  <section class="faq">
+    <h2>Частые вопросы</h2>
+    <div class="faq-item">
+      <h3>Что лучше для новичка — onshore или offshore?</h3>
+      <p>Обычно onshore: ниже порог входа, дешевле обучение (4 модуля GWO без Sea Survival) и работодатели чаще берут людей из смежных профессий. Через 1–2 года опыта на суше открывается offshore. Исключение — у кого уже есть морской опыт.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Где больше платят — на суше или в море?</h3>
+      <p>На входе в offshore ставка как правило выше: от 4 500 € в месяц против от 20 € в час плюс суточные на суше. Но годовой доход сильнее зависит от ротации и типа контракта, чем от ставки.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Какой график на onshore и offshore?</h3>
+      <p>На суше обычно 6 недель через 2 или 4 через 1, неделя 6 дней по 8–10 часов. В море — как правило 2 недели через 2, 7 дней в неделю по 10–12 часов; погода может сдвинуть вахту.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Какие сертификаты нужны для offshore?</h3>
+      <p>Базовый GWO Basic Safety Training плюс модуль Sea Survival и офшорная медкомиссия по стандарту региона. Для onshore достаточно 4 базовых модулей GWO.</p>
+    </div>
+  </section>
+
+  <section class="related">
+    <h2>Читайте также</h2>
+    <div class="related-grid">
+      <a href="rabota-offshore-vetryaki.html">Работа на офшорных ветряках<span>Спрос, зарплаты, сертификаты.</span></a>
+      <a href="sertifikat-gwo.html">Сертификат GWO: модули, цена, срок действия<span>Главный допуск на турбину.</span></a>
+      <a href="kak-popast-na-vetryaki-bez-opyta.html">Как попасть на ветряки без опыта<span>Почему вход идёт через onshore.</span></a>
+      <a href="skolko-platyat-na-vetryakah.html">Сколько платят на ветряках<span>Годовой доход по ротациям.</span></a>
+      <a href="mehanik-na-vetryaki.html">Механик на ветряки<span>Переход из автосервиса или с завода.</span></a>
+    </div>
+  </section>
+
+  <p class="disclaimer">Материал носит информационный характер и основан на практике FIFO Route, разборе вакансий и открытых данных учебных центров на ноябрь 2026 года. Ставки и цены различаются по странам и компаниям. FIFO Route не гарантирует получение визы или работы.</p>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 FIFO Route</span>
+    <span><a href="/">Главная</a> · <a href="/blog/">Блог</a> · <a href="/pakety/">Пакеты</a> · <a href="rabota-offshore-vetryaki.html">Офшорные ветряки</a> · <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener">Telegram-поддержка</a></span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // Stripe pogas — ar pakotnes nosaukumu
+  var pkgs = {'28800':'Start','28801':'Karjernyj bilder','28802':'Akselerator','28803':'VIP'};
+  document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var suffix = a.href.slice(-5);
+      var pkg = pkgs[suffix] || 'unknown';
+      if (typeof gtag === 'function') gtag('event', 'begin_checkout', {package: pkg, link_url: a.href});
+      if (typeof clarity === 'function') clarity('event', 'stripe_click_' + pkg);
+    });
+  });
+  // Telegram parejas
+  document.querySelectorAll('a[href*="t.me"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (typeof gtag === 'function') gtag('event', 'telegram_click', {link_url: a.href});
+    });
+  });
+});
+</script>
+</body>
+</html>
