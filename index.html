@@ -447,7 +447,8 @@
   .quiz-tips li{margin-bottom:8px;}
   .quiz-tips li:last-child{margin-bottom:0;}
   .quiz-tips a{color:var(--orange);}
-  .quiz-result-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
+  .quiz-result-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:10px;}
+  .quiz-result-note{font-size:13.5px;color:var(--slate-light);margin:0 0 18px;}
 
   /* ===== LEAD MAGNET (бесплатный PDF после теста) ===== */
   .lead-magnet{
@@ -1082,7 +1083,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         <button type="button" class="quiz-back" id="quizBack">← Назад</button>
 
         <div class="quiz-result" id="quizResult">
-          <span class="quiz-result-tag">Рекомендуемый пакет</span>
+          <span class="quiz-result-tag">Ваш результат</span>
           <h3 id="quizResultTitle"></h3>
           <p id="quizResultText"></p>
           <div class="quiz-tips" id="quizTips">
@@ -1090,9 +1091,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             <ol id="quizTipsList"></ol>
           </div>
           <div class="quiz-result-actions">
-            <a href="#contact" class="btn btn-primary" id="quizCtaContact">Выбрать этот пакет</a>
-            <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener" class="btn btn-ghost">Обсудить с менеджером в Telegram</a>
+            <a href="https://t.me/fiforoute_support_bot?start=quiz" target="_blank" rel="noopener" class="btn btn-primary" id="quizCtaTg">Бесплатный разбор в Telegram</a>
+            <a href="#contact" class="btn btn-ghost" id="quizCtaContact">Выбрать пакет</a>
           </div>
+          <p class="quiz-result-note">Бесплатно: проверим вакансию или подскажем, с чего начать именно вам. Покупать ничего не нужно.</p>
           <div class="lead-magnet">
             <div class="lm-top">
               <div class="lm-ic">📄</div>
@@ -1867,6 +1869,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       }
 
       window.__fifoQuizPackage = recommendedPackage;
+      const ctaTg = document.getElementById('quizCtaTg');  // bots sveic ar testa rezultātu (tg-agent quiz_welcome)
+      if(ctaTg) ctaTg.href = 'https://t.me/fiforoute_support_bot?start=quiz_' + (recommendedPackage === 'Акселератор' ? 'akselerator' : 'start');
       window.__fifoQuizAnswers = JSON.parse(JSON.stringify(answers));
       resultTitle.textContent = title;
       resultText.textContent = text;
