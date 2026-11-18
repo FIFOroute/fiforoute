@@ -296,6 +296,19 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   <h2>$39 вернутся, если пойдёте дальше</h2>
   <p>Если после аудита захотите, чтобы резюме переделали за вас, — в течение <strong>7 дней</strong> после получения отчёта закажите любой пакет, и стоимость аудита вычтем. Промокод будет в отчёте. Например, «Старт» тогда обойдётся в <strong>$130</strong> вместо $169.</p>
 
+  <h2 id="proverka">Сначала проверить работодателя? — $19</h2>
+  <p>Нашли вакансию, но не уверены, что компания настоящая? Проверим её до того, как вы отправите резюме или документы.</p>
+  <div class="incl">
+      <div class="row"><div class="ic">✓</div><div class="tx"><b>Компания в официальном реестре страны</b><span>Когда зарегистрирована, действующая ли, чем занимается. Сейчас автоматически — Великобритания и Норвегия, по другим странам смотрим вручную.</span></div></div>
+      <div class="row"><div class="ic">✓</div><div class="tx"><b>Признаки обмана в объявлении</b><span>Деньги до контракта, «гарантия визы», связь только через мессенджер и другие сигналы.</span></div></div>
+      <div class="row"><div class="ic">✓</div><div class="tx"><b>3 вопроса работодателю до отклика</b><span>Кто работодатель по договору, кто платит за обучение, дорогу и жильё, как с визой или правом на работу.</span></div></div>
+  </div>
+  <p class="buy-note">Ответ в Telegram и на почту в течение 1 рабочего дня, его проверяет человек. Закажете аудит или пакет в течение 7 дней — $19 вычтем. Подтвердить, что вакансия настоящая, не может никто, кроме самого работодателя, — мы показываем факты и риски.</p>
+  <div class="buy-row">
+    <a href="https://buy.stripe.com/7sYeVe9Rt2PF1VAdIL28806" target="_blank" rel="noopener" class="btn">Проверить работодателя — $19</a>
+    <a href="https://t.me/fiforoute_support_bot?start=check" target="_blank" rel="noopener" class="btn btn-ghost">Первая проверка — бесплатно</a>
+  </div>
+
   <h2>Кому подходит</h2>
   <div class="fit">
     <div class="col yes">
@@ -346,7 +359,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 </footer>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  var pkgs = {'28805':'Audit','28800':'Start','28801':'Karjernyj bilder','28802':'Akselerator','28803':'VIP'};
+  var pkgs = {'28806':'Proverka','28805':'Audit','28800':'Start','28801':'Karjernyj bilder','28802':'Akselerator','28803':'VIP'};
   document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){
     a.addEventListener('click', function(){
       var suffix = a.href.slice(-5);
