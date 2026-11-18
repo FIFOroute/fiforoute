@@ -113,8 +113,45 @@
   .cv-panel.bad .cap{color:var(--orange);}
   .cv-panel.good .cap{color:var(--green);}
   .cv-panel svg{width:100%;height:auto;display:block;border-radius:6px;}
+  .cv-sheet{background:#f6f8fa;color:#1d2733;border-radius:6px;font-family:Arial,Helvetica,sans-serif;font-size:9px;line-height:1.4;overflow:hidden;position:relative;box-shadow:0 6px 18px rgba(0,0,0,.35);}
+  .cv-sheet .hid{filter:blur(3px);user-select:none;}
+  .cv-sheet h4{font-size:8px;letter-spacing:.08em;text-transform:uppercase;margin:7px 0 2px;color:#5b6b7c;font-family:Arial,sans-serif;font-weight:700;}
+  article .cv-sheet p{margin:0 0 3px;font-size:9px;line-height:1.4;color:#1d2733;}
+  article .cv-sheet ul{margin:0 0 2px;padding-left:0;}
+  article .cv-sheet ul li{margin:0 0 1px;padding-left:8px;font-size:9px;color:#1d2733;line-height:1.4;}
+  article .cv-sheet ul li::before{content:"";left:1px;top:5px;width:3px;height:3px;background:#5b6b7c;}
+  .cv-two{display:grid;grid-template-columns:37% 1fr;}
+  .cv-side{background:#dfe6ee;padding:10px 8px;}
+  .cv-main{padding:10px 10px;}
+  .cv-photo{width:44px;height:44px;border-radius:50%;background:#b9c6d4;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;}
+  .cv-sheet .cv-name{font-size:12.5px;font-weight:700;margin:0 0 1px;}
+  .cv-sheet .cv-title{font-size:9.5px;font-weight:700;color:#3b5573;margin-bottom:4px;}
+  .cv-one{padding:11px 13px;}
+  .cv-one .cv-title{color:#0f7a5c;}
+  .cv-one h4{border-bottom:1px solid #d5dde6;padding-bottom:1px;}
+  .cv-row{display:flex;justify-content:space-between;gap:6px;}
+  .cv-row span{color:#5b6b7c;white-space:nowrap;}
+  /* «Было» — amatiera formatējums: dažādi virsraksti, fonti, atkāpes */
+  .bad .h-a{font-size:9.5px;letter-spacing:0;text-transform:none;color:#1d2733;}
+  .bad .h-b{text-decoration:underline;letter-spacing:.02em;color:#2d4c7c;font-size:8.5px;}
+  .bad .h-c{font-family:'Times New Roman',serif;font-size:10px;text-transform:none;letter-spacing:0;color:#1d2733;font-style:italic;}
+  article .bad .cv-sheet ul li.off{padding-left:16px;font-size:10px;}
+  article .bad .cv-sheet ul li.dash::before{content:"–";background:none;width:auto;height:auto;top:0;left:1px;color:#1d2733;}
+  article .bad .cv-sheet ul li.big{font-size:10.5px;font-weight:700;}
+  .bad .serif{font-family:'Times New Roman',serif;font-size:10px !important;}
+  .bad .just{text-align:justify;}
+  .bad .gap{height:9px;}
+  .bad .center{text-align:center;}
+  .mk{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;font-size:8.5px;font-weight:700;color:#fff;vertical-align:1px;margin-right:3px;font-family:Arial,sans-serif;text-transform:none;text-decoration:none;letter-spacing:0;font-style:normal;}
+  .bad .mk{background:#e2611a;}
+  .good .mk{background:#13a37a;}
+  article .cv-legend{list-style:none;padding:0;margin:12px 0 0;}
+  article .cv-legend li{margin-bottom:6px;padding-left:22px;font-size:13.5px;color:var(--slate-light);line-height:1.5;}
+  article .cv-legend li::before{display:none;}
+  .cv-legend .mk{position:absolute;left:0;top:3px;}
+  .cv-src{font-size:12.5px;color:var(--slate);margin:-18px 0 26px;}
   .cv-panel .note{font-size:13.5px;color:var(--slate-light);margin-top:12px;line-height:1.5;}
-  @media(max-width:560px){ .cv-compare{grid-template-columns:1fr;} }
+  @media(max-width:760px){ .cv-compare{grid-template-columns:1fr;} }
 
   .faq{margin:44px 0 0;}
   .faq h2{margin-bottom:20px;}
@@ -293,71 +330,100 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     <div class="cv-compare">
       <div class="cv-panel bad">
         <div class="cap">Было</div>
-        <svg viewBox="0 0 200 270" role="img" aria-label="Схема резюме в две колонки с фотографией и боковой панелью">
-        <rect x="0" y="0" width="200" height="270" rx="4" fill="#0e1b28"/>
-        <rect x="0" y="0" width="64" height="270" rx="4" fill="#1b3350"/>
-        <circle cx="32" cy="34" r="19" fill="#2c4a6e"/>
-        <rect x="12" y="66" width="40" height="5" rx="2" fill="#3d5f85"/>
-        <rect x="12" y="78" width="32" height="4" rx="2" fill="#2c4a6e"/>
-        <rect x="12" y="88" width="36" height="4" rx="2" fill="#2c4a6e"/>
-        <rect x="12" y="108" width="40" height="5" rx="2" fill="#3d5f85"/>
-        <rect x="12" y="120" width="34" height="4" rx="2" fill="#2c4a6e"/>
-        <rect x="12" y="130" width="38" height="4" rx="2" fill="#2c4a6e"/>
-        <rect x="12" y="152" width="40" height="5" rx="2" fill="#3d5f85"/>
-        <rect x="12" y="164" width="36" height="4" rx="2" fill="#2c4a6e"/>
-        <rect x="12" y="174" width="30" height="4" rx="2" fill="#2c4a6e"/>
-        <rect x="12" y="184" width="34" height="4" rx="2" fill="#2c4a6e"/>
-        <rect x="76" y="18" width="88" height="9" rx="3" fill="#9fb0c2"/>
-        <rect x="76" y="32" width="110" height="4" rx="2" fill="#5c7187"/>
-        <rect x="76" y="52" width="44" height="5" rx="2" fill="#ff7a2e"/>
-        <rect x="76" y="64" width="112" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="72" width="112" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="80" width="112" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="88" width="104" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="96" width="112" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="104" width="96" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="124" width="52" height="5" rx="2" fill="#ff7a2e"/>
-        <rect x="76" y="136" width="112" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="144" width="108" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="156" width="112" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="164" width="100" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="176" width="112" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="184" width="88" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="206" width="48" height="5" rx="2" fill="#ff7a2e"/>
-        <rect x="76" y="218" width="100" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="76" y="226" width="92" height="3.5" rx="1.75" fill="#3f5670"/>
-      </svg>
-        <p class="note">Две колонки, фотография, боковая панель. Контакты, образование, навыки и права — всё в панели слева.</p>
+        <div class="cv-sheet" role="img" aria-label="Фрагмент первой версии резюме: две колонки, фото, разный формат разделов, заголовок про профессию водителя, допусков нет">
+          <div class="cv-two">
+            <div class="cv-side">
+              <div class="cv-photo"><span class="mk">2</span></div>
+              <h4><span class="mk">1</span>CONTACTS</h4>
+              <p class="hid">+00 000 000 000</p>
+              <p class="hid">name.surname@mail.com</p>
+              <p class="hid">Street 00, City</p>
+              <h4 class="h-a">Skills:</h4>
+              <ul>
+                <li>Calm decision-making on the move</li>
+                <li class="off">Polite communication with passengers</li>
+                <li>Responsibility and punctuality</li>
+                <li class="dash">Passenger comfort and a clean vehicle</li>
+                <li>Safe driving</li>
+              </ul>
+              <h4 class="h-b">EDUCATION</h4>
+              <ul>
+                <li class="big">Business degree</li>
+                <li><span class="hid">20XX–20XX</span></li>
+              </ul>
+              <div class="gap"></div>
+              <ul><li>Vocational school (previous profession)</li></ul>
+              <h4 class="h-c">Driving licence</h4>
+              <p class="center">all categories incl. heavy vehicles</p>
+            </div>
+            <div class="cv-main">
+              <p class="cv-name hid">Name Surname</p>
+              <p class="cv-title"><span class="mk">3</span>Professional Driver · Road Safety</p>
+              <h4><span class="mk">5</span>About me</h4>
+              <p class="just">I drive regularly and I am known as a reliable and punctual driver. I always care about the comfort of my passengers and keep the vehicle clean.</p>
+              <p class="just serif">I am calm in difficult situations on the road and I make decisions quickly. Safety is always my priority.</p>
+              <p class="just">I am friendly, polite and easy to work with. I am looking for a stable job where I can use my experience.</p>
+              <h4 class="h-a">Work experience</h4>
+              <p><b>Retail store manager</b> <span class="hid">20XX–20XX</span><br>I launched and developed the store. Responsible for staff, suppliers and daily work.</p>
+              <p><b>Law enforcement</b> <span class="hid">20XX–20XX</span><br>Road safety, work with people.</p>
+              <p><b>Lift installation</b> — Norway, Sweden <span class="hid">20XX–20XX</span></p>
+              <h4><span class="mk">4</span>Certificates</h4>
+              <p style="color:#9aa7b4;font-style:italic;">— раздела нет —</p>
+            </div>
+          </div>
+        </div>
+        <ul class="cv-legend">
+          <li><span class="mk">1</span>Две колонки: контакты и образование в боковой панели — робот их теряет.</li>
+          <li><span class="mk">2</span>Фото — за рубежом не принято.</li>
+          <li><span class="mk">3</span>Заголовок про другую профессию.</li>
+          <li><span class="mk">4</span>Допуски были, но в резюме их нет.</li>
+          <li><span class="mk">5</span>Профиль от первого лица, без проверяемых фактов.</li>
+        </ul>
       </div>
       <div class="cv-panel good">
         <div class="cap">Стало</div>
-        <svg viewBox="0 0 200 270" role="img" aria-label="Схема резюме в одну колонку без фотографии">
-        <rect x="0" y="0" width="200" height="270" rx="4" fill="#0e1b28"/>
-        <rect x="14" y="16" width="96" height="9" rx="3" fill="#eef3f8"/>
-        <rect x="14" y="30" width="130" height="4" rx="2" fill="#5c7187"/>
-        <rect x="14" y="40" width="160" height="3" rx="1.5" fill="#3f5670"/>
-        <rect x="14" y="58" width="40" height="5" rx="2" fill="#2bd9a3"/>
-        <rect x="14" y="70" width="172" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="78" width="172" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="86" width="150" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="104" width="62" height="5" rx="2" fill="#2bd9a3"/>
-        <rect x="14" y="116" width="172" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="124" width="164" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="140" width="56" height="5" rx="2" fill="#2bd9a3"/>
-        <rect x="14" y="152" width="172" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="160" width="172" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="168" width="140" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="176" width="172" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="184" width="156" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="202" width="70" height="5" rx="2" fill="#2bd9a3"/>
-        <rect x="14" y="214" width="172" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="222" width="160" height="3.5" rx="1.75" fill="#3f5670"/>
-        <rect x="14" y="240" width="44" height="5" rx="2" fill="#2bd9a3"/>
-        <rect x="14" y="252" width="130" height="3.5" rx="1.75" fill="#3f5670"/>
-      </svg>
-        <p class="note">Одна колонка, без фото. Сверху вниз: профиль, компетенции, опыт, образование, сертификаты.</p>
+        <div class="cv-sheet" role="img" aria-label="Фрагмент новой версии резюме: одна колонка, без фото, заголовок под полевые технические работы, раздел допусков">
+          <div class="cv-one">
+            <p class="cv-name hid">Name Surname</p>
+            <p class="hid">+00 000 000 000 · name.surname@mail.com · City, Country</p>
+            <p class="cv-title"><span class="mk">✓</span>Technical Field Service Specialist</p>
+            <h4>Profile</h4>
+            <p>Technician with hands-on lift installation experience on sites in Norway and Sweden. Trained to Scandinavian working-at-height standards; holds hot work and electrical qualifications and an electronics technician diploma. Heavy-vehicle driving licences.</p>
+            <h4>Key competencies</h4>
+            <ul>
+              <li>Mechanical installation on construction sites</li>
+              <li>Working at height under Scandinavian standards</li>
+              <li>Electrical work within qualification scope</li>
+              <li>Hot work under permit</li>
+              <li>Heavy-vehicle driving licences</li>
+            </ul>
+            <h4><span class="mk">✓</span>Certificates &amp; qualifications</h4>
+            <ul>
+              <li><b>Working at Heights</b> — Scandinavian standard <span class="hid">· country</span></li>
+              <li><b>Hot Work Permit</b> <span class="hid">· country</span></li>
+              <li><b>Electrical qualification</b> <span class="hid">· country</span></li>
+              <li><b>Electronics Technician</b> — diploma</li>
+            </ul>
+            <h4>Experience</h4>
+            <div class="cv-row"><p><b>Lift installation technician</b> — Norway, Sweden</p><span class="hid">20XX–20XX</span></div>
+            <ul><li>Installation of lift systems on construction sites</li><li>Daily work at height and with electrical systems</li></ul>
+            <div class="cv-row"><p><b>Retail store manager</b></p><span class="hid">20XX–20XX</span></div>
+            <ul><li>€350,000 turnover over 4 years</li></ul>
+            <div class="cv-row"><p><b>Law enforcement officer</b></p><span class="hid">20XX–20XX</span></div>
+            <ul><li>Road safety</li></ul>
+            <h4>Education</h4>
+            <p>Electronics technician · Business degree · Vocational school</p>
+          </div>
+        </div>
+        <ul class="cv-legend">
+          <li><span class="mk">✓</span>Одна колонка сверху вниз, контакты в тексте, без фото.</li>
+          <li><span class="mk">✓</span>Заголовок и профиль — под техника на ветропарк.</li>
+          <li><span class="mk">✓</span>Отдельный раздел допусков со страной выдачи — те же документы, что были всегда.</li>
+          <li><span class="mk">✓</span>Вместо «запустил и развил» — цифра: оборот 350 000 € за 4 года.</li>
+        </ul>
       </div>
     </div>
+    <p class="cv-src">Фрагменты воссозданы по реальному резюме кандидата, формулировки сокращены. Имя, контакты и даты скрыты; новых документов кандидат не получал — изменились только текст и порядок.</p>
 
     <p><strong>1. Двухколоночная вёрстка.</strong> Система отбора читает документ сверху вниз и слева направо. Боковая панель для неё — не дизайн, а набор обрывков, которые она либо перемешивает с основным текстом, либо теряет целиком.</p>
 
