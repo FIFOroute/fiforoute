@@ -538,6 +538,20 @@
   }
   .pkg-more:hover{color:var(--orange);}
 
+  .pkg-first{
+    display:flex;align-items:center;gap:32px;max-width:980px;margin:0 auto 30px;
+    background:rgba(255,122,46,0.07);border:1px solid rgba(255,122,46,0.45);
+    border-radius:var(--radius);padding:26px 30px;
+  }
+  .pkg-first-text{flex:1;}
+  .pkg-first-text .pkg-name{color:var(--orange);margin-bottom:8px;}
+  .pkg-first-title{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;line-height:1.2;margin-bottom:8px;}
+  .pkg-first-text p{font-size:14px;color:var(--slate-light);margin:0;}
+  .pkg-first-actions{flex:0 0 260px;}
+  @media(max-width:760px){
+    .pkg-first{flex-direction:column;align-items:stretch;gap:18px;padding:22px 20px;}
+    .pkg-first-actions{flex:none;}
+  }
   .pkg-guarantee{
     display:flex;align-items:center;justify-content:center;gap:8px;
     font-size:12px;color:var(--slate-light);font-weight:600;margin-top:12px;
@@ -1184,7 +1198,18 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       <div class="section-head center reveal">
         <span class="eyebrow">Пакеты услуг</span>
         <h2>Выберите уровень сопровождения</h2>
-        <p>Во всех пакетах: черновик резюме за 2 рабочих дня и <a href="refund-policy.html" style="color:var(--orange);">правки в рамках пакета</a>, пока вы не будете довольны результатом. <a href="/pakety/" style="color:var(--orange);">Сравнить все пакеты →</a></p>
+        <p>Во всех пакетах: черновик резюме за 2 рабочих дня и <a href="refund-policy.html" style="color:var(--orange);">правки в рамках пакета</a>: 1 раунд в «Старте», 3 в «Карьерном билдере», без лимита в «Акселераторе» и VIP. <a href="/pakety/" style="color:var(--orange);">Сравнить все пакеты →</a></p>
+      </div>
+      <div class="pkg-first reveal">
+        <div class="pkg-first-text">
+          <div class="pkg-name">С чего начать</div>
+          <div class="pkg-first-title">Аудит резюме под вакансию — $39</div>
+          <p>Через 2 рабочих дня — PDF-отчёт: что мешает пройти отбор, какие строки переписать и нет ли в вакансии признаков мошенников. Закажете пакет в течение 7 дней — $39 вычтем.</p>
+        </div>
+        <div class="pkg-first-actions">
+          <a href="https://buy.stripe.com/8x200k7Jl4XN8jYeMP28805" target="_blank" rel="noopener" class="btn btn-primary btn-block">Заказать аудит — $39</a>
+          <a href="/pakety/audit/" class="pkg-more">Посмотреть пример отчёта →</a>
+        </div>
       </div>
       <div class="pkg-grid">
         <div class="pkg-card reveal">
@@ -1201,7 +1226,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             <a href="https://buy.stripe.com/14A14o1kX4XNas648b28800" target="_blank" rel="noopener" class="btn btn-ghost btn-block">Оплатить «Старт» — $169</a>
             <a href="/pakety/start/" class="pkg-more">Подробнее о пакете →</a>
           </div>
-          <div class="pkg-guarantee">🛡 Правки до полного согласия</div>
+          <div class="pkg-guarantee">🛡 1 раунд правок, 30 дней</div>
         </div>
         <div class="pkg-card featured reveal">
           <div class="pkg-name">Карьерный билдер</div>
@@ -1218,7 +1243,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             <a href="https://buy.stripe.com/bJe8wQbZB3TJ8jYawz28801" target="_blank" rel="noopener" class="btn btn-primary btn-block">Оплатить — $329</a>
             <a href="/pakety/karernyy-bilder/" class="pkg-more">Подробнее о пакете →</a>
           </div>
-          <div class="pkg-guarantee">🛡 Правки до полного согласия</div>
+          <div class="pkg-guarantee">🛡 3 раунда правок, 30 дней</div>
         </div>
         <div class="pkg-card reveal">
           <div class="pkg-name">Акселератор</div>
@@ -1234,7 +1259,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             <a href="https://buy.stripe.com/fZu8wQ0gT75Vbwa0VZ28802" target="_blank" rel="noopener" class="btn btn-ghost btn-block">Оплатить «Акселератор» — $599</a>
             <a href="/pakety/akselerator/" class="pkg-more">Подробнее о пакете →</a>
           </div>
-          <div class="pkg-guarantee">🛡 Правки до полного согласия</div>
+          <div class="pkg-guarantee">🛡 Правки резюме без лимита</div>
         </div>
         <div class="pkg-card reveal">
           <div class="pkg-name">VIP под ключ</div>
@@ -1251,11 +1276,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             <a href="https://buy.stripe.com/28E8wQ3t5duj57MfQT28803" target="_blank" rel="noopener" class="btn btn-ghost btn-block">Оплатить «VIP» — $1299</a>
             <a href="/pakety/vip-pod-klyuch/" class="pkg-more">Подробнее о пакете →</a>
           </div>
-          <div class="pkg-guarantee">🛡 Правки до полного согласия</div>
+          <div class="pkg-guarantee">🛡 Правки резюме без лимита</div>
         </div>
-      </div>
-      <div class="payment-note reveal" style="margin-bottom:14px;border-color:rgba(255,122,46,0.45);">
-        🔎 <b>Не готовы к пакету? Начните с малого: аудит резюме под вакансию — $39.</b> Через 2 рабочих дня — PDF-отчёт: что мешает пройти отбор и нет ли в вакансии признаков мошенников. Закажете пакет в течение 7 дней — $39 вычтем. <a href="/pakety/audit/" style="color:var(--orange);">Подробнее →</a>
       </div>
       <div class="payment-note reveal">
         🔒 <b>Оплата картой онлайн — через защищённый Stripe Checkout.</b> После оплаты вы сразу получите подтверждение на почту и короткую анкету — с неё начинается работа над вашим заказом. Если карта не проходит (например, выпущена в РФ) — напишите менеджеру, подберём альтернативу: перевод или криптовалюта.
@@ -1282,7 +1304,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         <div class="comm-card reveal">
           <div class="ch-ico ch-tg"><svg><use href="#i-tg"/></svg></div>
           <h3>Поддержка в Telegram</h3>
-          <p>Быстрые ответы на вопросы по пакетам, оплате и вашей ситуации — напрямую от менеджера.</p>
+          <p>Бот сразу ответит на вопросы по пакетам, оплате и вашей ситуации. Если нужен человек — подключится менеджер.</p>
           <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener" class="btn btn-ghost">Написать в поддержку</a>
         </div>
         <div class="comm-card reveal">
@@ -1312,7 +1334,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         <div class="process-card reveal"><div class="pnum">1</div><h4>Заявка и звонок</h4><p>Обсуждаем вашу ситуацию и цель — бесплатно, 15 минут.</p></div>
         <div class="process-card reveal"><div class="pnum">2</div><h4>Анализ опыта и рисков</h4><p>Оцениваем квалификацию и визовые риски конкретно для вас.</p></div>
         <div class="process-card reveal"><div class="pnum">3</div><h4>Подготовка документов</h4><p>Готовим резюме, сопроводительное письмо и визовый пакет.</p></div>
-        <div class="process-card reveal"><div class="pnum">4</div><h4>Проверка и правки</h4><p>Вы проверяете всё лично — вносим правки до полного согласия.</p></div>
+        <div class="process-card reveal"><div class="pnum">4</div><h4>Проверка и правки</h4><p>Вы проверяете всё лично — вносим правки в рамках вашего пакета.</p></div>
         <div class="process-card reveal"><div class="pnum">5</div><h4>Подача и сопровождение</h4><p>Подаёте документы — мы следим за сроками и остаёмся на связи до решения.</p></div>
       </div>
     </div>
@@ -2042,7 +2064,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   // Stripe pogas — ar pakotnes nosaukumu
-  var pkgs = {'28800':'Start','28801':'Karjernyj bilder','28802':'Akselerator','28803':'VIP'};
+  var pkgs = {'28800':'Start','28801':'Karjernyj bilder','28802':'Akselerator','28803':'VIP','28805':'Audit'};
   document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a){
     a.addEventListener('click', function(){
       var suffix = a.href.slice(-5);

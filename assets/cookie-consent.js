@@ -47,7 +47,9 @@
       + '.fr-cc-btn:hover{opacity:.88;}'
       + '.fr-cc-accept{background:linear-gradient(135deg,#ff7a2e,#e2611a);color:#10131a;}'
       + '.fr-cc-decline{background:transparent;color:#eef3f8;border:1px solid rgba(255,255,255,0.14);}'
-      + '@media(max-width:480px){.fr-cc{left:10px;right:10px;bottom:10px;padding:16px;}}';
+      + '@media(max-width:480px){.fr-cc{left:8px;right:8px;bottom:8px;padding:10px 12px;font-size:12px;line-height:1.4;}'
+      + '.fr-cc p{margin:0 0 8px;}.fr-cc-btns{flex-wrap:nowrap;gap:8px;}'
+      + '.fr-cc-btn{min-width:0;padding:10px 8px;font-size:12px;white-space:nowrap;}}';
 
     var style = document.createElement('style');
     style.textContent = css;
@@ -58,8 +60,7 @@
     box.setAttribute('role', 'dialog');
     box.setAttribute('aria-label', 'Согласие на использование cookie');
     box.innerHTML =
-      '<p>Мы используем cookie для анализа посещаемости сайта (Google Analytics). ' +
-      'Это помогает нам делать сайт полезнее. Подробнее — в ' +
+      '<p>Cookie для анализа посещаемости (Google Analytics). Подробнее — в ' +
       '<a href="/privacy-policy.html" target="_blank" rel="noopener">Политике конфиденциальности</a>.</p>' +
       '<div class="fr-cc-btns">' +
       '<button type="button" class="fr-cc-btn fr-cc-accept">Принять</button>' +
