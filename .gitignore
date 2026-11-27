@@ -1,0 +1,29 @@
+# FIFO Route vietne (publiska, GitHub Pages) — šeit glabājas TIKAI tas, ko drīkst redzēt ikviens.
+# GH-03 (2026-11-27). Papildu pārbaude: ..\vietnes-parbaude.ps1 (palaiž publicet-vietni.bat).
+
+# Atslēgas un tokeni
+.env
+.env.*
+*.pem
+*.key
+
+# Rezerves kopijas, pagaidu faili, žurnāli
+*.bak
+*.bak*
+*.tmp
+*.orig
+*.swp
+*.log
+*.corrupt-*
+
+# Dati un skripti, kas nav vietnes daļa
+*.csv
+*.jsonl
+*.py
+*.ps1
+*.bat
+
+# Sistēmas faili
+Thumbs.db
+desktop.ini
+.DS_Store

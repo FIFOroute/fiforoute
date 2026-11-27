@@ -1927,7 +1927,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     // ===== LEAD MAGNET: добровольный e-mail + PDF =====
     (function(){
       // Заявка пишется в таблицу через Google Apps Script (тот же адрес, что у контактной формы);
-      // письмо с PDF отправляет Growth Engine (agents/lead_notify.py) в течение ~10 минут. Make.com больше не нужен.
+      // Growth Engine (agents/lead_notify.py) за ~10 минут шлёт письмо-подтверждение (double opt-in, podtverdit.html),
+      // после клика — письмо с PDF и ссылкой для отписки (otpiska.html). Make.com больше не нужен.
       // Пустая строка — форма работает, но письмо не отправляется: пользователь просто скачивает PDF.
       var WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwua20kYJYwE72XvN2L3A0wl0dAjM7q4aH9xuN0FkoT04one318p9-itaj7ftOYFLzo/exec';
 
@@ -1993,7 +1994,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         function ok(){
           if (typeof gtag === 'function') gtag('event', 'generate_lead', {method: 'quiz_lead_magnet'});
           if (typeof clarity === 'function') clarity('event', 'lead_magnet_email');
-          finish('Готово! Отправили чек-лист на ' + val + '. Если письмо не пришло за 15 минут — проверьте папку «Спам» или скачайте файл кнопкой ниже.');
+          finish('Почти готово! Отправили письмо на ' + val + ' — нажмите в нём ссылку подтверждения, и мы пришлём чек-лист на почту. Письма нет за 15 минут — проверьте «Спам». А файл можно скачать уже сейчас кнопкой ниже.');
         }
 
         if(!WEBHOOK_URL){

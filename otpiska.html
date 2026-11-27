@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Отписка от писем — FIFO Route</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" type="image/svg+xml" href="assets/FR.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0b1622">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Bez analītikas: adresē ir personīgs kods (FE-01). -->
+<style>
+  :root{
+    --navy-deep:#0b1622; --navy:#101e2e; --navy-soft:#16283c;
+    --slate-light:#9fb0c2; --ice:#eef3f8;
+    --orange:#ff7a2e; --orange-deep:#e2611a; --green:#2bd9a3; --red:#ff6b6b;
+    --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Manrope',sans-serif;background:var(--navy-deep);color:var(--ice);
+    line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;
+    display:flex;flex-direction:column;
+    background-image:radial-gradient(ellipse at 70% -10%, rgba(255,122,46,0.14), transparent 55%);
+  }
+  a{color:var(--orange);text-decoration:none;}
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 16px;}
+  .card{
+    max-width:640px;width:100%;background:linear-gradient(160deg,var(--navy-soft),var(--navy));
+    border:1px solid var(--line-strong);border-radius:20px;padding:44px 28px;
+    box-shadow:0 40px 90px -40px rgba(0,0,0,0.7);
+  }
+  .icon{
+    width:72px;height:72px;border-radius:50%;background:rgba(43,217,163,0.14);
+    border:2px solid var(--green);display:flex;align-items:center;justify-content:center;
+    font-size:34px;color:var(--green);margin-bottom:26px;
+  }
+  .icon.wait{border-color:var(--slate-light);color:var(--slate-light);background:rgba(159,176,194,0.1);}
+  .icon.bad{border-color:var(--red);color:var(--red);background:rgba(255,107,107,0.1);}
+  h1{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:28px;margin-bottom:12px;line-height:1.15;}
+  .sub{color:var(--slate-light);font-size:15.5px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;
+    margin-top:28px;padding:17px 30px;border-radius:10px;
+    background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#10131a;
+    font-family:'Oswald',sans-serif;font-size:15px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;
+  }
+  .btn.ghost{background:transparent;border:1px solid var(--line-strong);color:var(--ice);margin-top:12px;}
+  .hide{display:none;}
+  .alt{margin-top:22px;text-align:center;font-size:13px;color:var(--slate-light);}
+  footer{text-align:center;padding:26px;font-size:12.5px;color:var(--slate-light);border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <div class="icon wait" id="icon">…</div>
+    <h1 id="title">Отписываем…</h1>
+    <p class="sub" id="sub">Секунду, это займёт пару мгновений.</p>
+    <a id="retry" class="btn hide" href="#">Отписаться ещё раз</a>
+    <p class="alt">Вопросы? <a href="https://t.me/fiforoute_support_bot" target="_blank" rel="noopener">Telegram-бот</a> или <a href="mailto:hello@fiforoute.work">hello@fiforoute.work</a></p>
+  </div>
+</main>
+<footer>© 2026 FIFO Route · <a href="/">На главную</a></footer>
+<script>
+(function(){
+  // Tas pats Apps Script, kas vietnes formās (index.html). Atbilde: {ok:true} vai {ok:false,error:…} — bez datiem.
+  var URL_ = 'https://script.google.com/macros/s/AKfycbwua20kYJYwE72XvN2L3A0wl0dAjM7q4aH9xuN0FkoT04one318p9-itaj7ftOYFLzo/exec';
+  var t = (new URLSearchParams(location.search).get('t') || '').toLowerCase();
+  try { history.replaceState(null, '', location.pathname); } catch (e) {}   // kodu adreses joslā neatstājam
+  var $ = function(id){ return document.getElementById(id); };
+  function show(kind, title, sub){
+    $('icon').className = 'icon' + (kind === 'ok' ? '' : ' ' + kind);
+    $('icon').textContent = kind === 'ok' ? '✓' : (kind === 'bad' ? '!' : '…');
+    $('title').textContent = title; $('sub').textContent = sub;
+  }
+  if(!/^[a-f0-9]{32}$/.test(t)){
+    show('bad', 'Ссылка неполная', 'Откройте ссылку из письма целиком — или ответьте на письмо словом «Стоп», и мы отпишем вас вручную.');
+    return;
+  }
+  function confirm_(){
+    show('wait', 'Отписываем…', 'Секунду, это займёт пару мгновений.');
+    $('retry').classList.add('hide');
+    fetch(URL_ + '?a=unsub&t=' + t, {method: 'GET', credentials: 'omit', referrerPolicy: 'no-referrer'})
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if(d && d.ok){
+          show('ok', 'Вы отписались', 'Больше писем на этот адрес не будет. Если передумаете — пройдите тест на главной и оставьте почту снова. Вопросы можно задать в Telegram.');
+        } else {
+          show('bad', 'Ссылка не найдена', 'Не удалось найти адрес по этой ссылке. Ответьте на любое наше письмо словом «Стоп» — и мы отпишем вас вручную.');
+        }
+      })
+      .catch(function(){
+        show('bad', 'Не получилось связаться с сервером', 'Проверьте интернет и нажмите кнопку ниже.');
+        $('retry').classList.remove('hide');
+      });
+  }
+  $('retry').addEventListener('click', function(e){ e.preventDefault(); confirm_(); });
+  confirm_();
+})();
+</script>
+</body>
+</html>
